@@ -1,0 +1,2105 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AERO MOTORS | Flagship Luxury & Performance Automotive Showroom</title>
+    
+    <!-- Google Fonts: Plus Jakarta Sans, Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        obsidian: '#0A0A0C',
+                        charcoal: '#121216',
+                        slatecard: '#18181E',
+                        borderline: '#262630',
+                        ivory: '#F4F4F6',
+                        silver: '#9A9AA6',
+                        gold: '#C9A86A',
+                        goldHover: '#DFC186',
+                    },
+                    backgroundImage: {
+                        'hero-vignette': 'radial-gradient(circle at 72% 45%, rgba(10, 10, 12, 0.25) 0%, rgba(10, 10, 12, 0.85) 65%, rgba(10, 10, 12, 0.98) 100%)',
+                        'hero-linear': 'linear-gradient(to right, rgba(10, 10, 12, 0.96) 0%, rgba(10, 10, 12, 0.72) 50%, rgba(10, 10, 12, 0.2) 100%)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Scrollbar & Smooth Micro-Interaction Styles -->
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0A0A0C;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #262630;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #C9A86A;
+        }
+        @keyframes slowZoom {
+            0% { transform: scale(1.0); }
+            50% { transform: scale(1.06); }
+            100% { transform: scale(1.0); }
+        }
+        .animate-slow-zoom {
+            animation: slowZoom 28s ease-in-out infinite;
+        }
+        /* Custom Range Slider Styling */
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            background: #262630;
+            height: 6px;
+            border-radius: 999px;
+            outline: none;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #C9A86A;
+            cursor: pointer;
+            border: 2px solid #0A0A0C;
+            box-shadow: 0 0 10px rgba(201, 168, 106, 0.45);
+            transition: transform 0.15s ease;
+        }
+        input[type="range"]::-webkit-slider-thumb:hover {
+            transform: scale(1.18);
+            background: #DFC186;
+        }
+    </style>
+</head>
+<body class="bg-obsidian text-ivory font-sans antialiased selection:bg-gold selection:text-obsidian overflow-x-hidden">
+
+    <!-- ==================== 1. STICKY GLASSMORPHIC NAVIGATION BAR ==================== -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-obsidian/85 backdrop-blur-xl border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Emblem + Logo -->
+                <a href="#home" class="flex items-center gap-3 group shrink-0">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-gold to-amber-700 p-[1px] shadow-lg shadow-gold/15 group-hover:scale-105 transition-transform">
+                        <div class="w-full h-full bg-obsidian rounded-[11px] flex items-center justify-center">
+                            <!-- Custom Aero Wing SVG Emblem -->
+                            <svg class="w-6 h-6 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M2 16l7-7 4 3 9-8M15 4h7v7" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4 20h16" opacity="0.5"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-display font-extrabold text-lg sm:text-xl tracking-wider text-ivory leading-none">AERO<span class="text-gold">.</span>MOTORS</span>
+                        <span class="text-[9px] font-mono uppercase tracking-[0.26em] text-silver mt-1">Flagship Showroom</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden xl:flex items-center space-x-6">
+                    <a href="#home" class="text-xs font-medium uppercase tracking-wider text-silver hover:text-gold transition-colors">Home</a>
+                    <a href="#inventory" class="text-xs font-medium uppercase tracking-wider text-silver hover:text-gold transition-colors">Inventory</a>
+                    <a href="#services" class="text-xs font-medium uppercase tracking-wider text-silver hover:text-gold transition-colors">Showroom Services</a>
+                    <a href="#finance" class="text-xs font-medium uppercase tracking-wider text-silver hover:text-gold transition-colors">Finance Calculator</a>
+                    <a href="#trade-in" class="text-xs font-medium uppercase tracking-wider text-silver hover:text-gold transition-colors">Trade-In Valuation</a>
+                    <a href="#about" class="text-xs font-medium uppercase tracking-wider text-silver hover:text-gold transition-colors">About Us</a>
+                    <a href="#contact" class="text-xs font-medium uppercase tracking-wider text-silver hover:text-gold transition-colors">Contact</a>
+                </nav>
+
+                <!-- Right Actions: Wishlist Counter, Book Test Drive & Mobile Toggle -->
+                <div class="flex items-center gap-2.5 sm:gap-3">
+                    <!-- Saved Wishlist Button with Counter Badge -->
+                    <button onclick="openWishlistDrawer()" aria-label="Saved Wishlist" class="relative p-2.5 rounded-xl bg-slatecard hover:bg-zinc-800 border border-borderline text-ivory transition-colors group">
+                        <svg class="w-5 h-5 text-silver group-hover:text-gold transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                        </svg>
+                        <span id="wishlist-badge" class="absolute -top-1.5 -right-1.5 min-w-[20px] h-5 px-1 rounded-full bg-gold text-obsidian font-mono font-bold text-[11px] flex items-center justify-center shadow">0</span>
+                    </button>
+
+                    <!-- Primary Book Test Drive CTA -->
+                    <button onclick="openTestDriveModal()" class="hidden sm:inline-flex items-center gap-2 bg-gold hover:bg-goldHover text-obsidian font-display font-bold text-xs uppercase tracking-wider px-4 sm:px-5 py-3 rounded-xl shadow-lg shadow-gold/20 transition-all duration-200 hover:-translate-y-0.5">
+                        <span>Book Test Drive</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </button>
+
+                    <!-- Mobile Hamburger Button -->
+                    <button id="mobile-menu-btn" aria-label="Open Navigation Menu" class="xl:hidden p-2.5 rounded-xl bg-slatecard border border-borderline text-ivory hover:border-gold transition-colors">
+                        <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                        <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Slide-Down Drawer -->
+        <div id="mobile-menu" class="hidden xl:hidden bg-charcoal border-b border-borderline px-4 pt-3 pb-6 space-y-1.5 shadow-2xl">
+            <a href="#home" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-ivory hover:bg-slatecard hover:text-gold">Home</a>
+            <a href="#inventory" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-ivory hover:bg-slatecard hover:text-gold">Inventory</a>
+            <a href="#services" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-ivory hover:bg-slatecard hover:text-gold">Showroom Services</a>
+            <a href="#finance" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-ivory hover:bg-slatecard hover:text-gold">Finance Calculator</a>
+            <a href="#trade-in" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-ivory hover:bg-slatecard hover:text-gold">Trade-In Valuation</a>
+            <a href="#about" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-ivory hover:bg-slatecard hover:text-gold">About Us</a>
+            <a href="#contact" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-ivory hover:bg-slatecard hover:text-gold">Contact</a>
+            <div class="pt-3">
+                <button onclick="closeMobileMenu(); openTestDriveModal();" class="w-full bg-gold hover:bg-goldHover text-obsidian font-display font-bold text-sm uppercase tracking-wider py-3.5 rounded-xl shadow-lg shadow-gold/20 transition-colors">
+                    Book Test Drive
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== 2. FULL-BLEED HERO SECTION ==================== -->
+    <section id="home" class="relative min-h-[90vh] lg:min-h-[94vh] flex items-center pt-24 pb-36 overflow-hidden">
+        <!-- Full-Bleed Showroom Backdrop Image with Smooth Slow Zoom -->
+        <div class="absolute inset-0 z-0 overflow-hidden">
+            <img 
+                src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=2070&q=85" 
+                onerror="this.onerror=null; this.src='https://placehold.co/1920x1080/0A0A0C/C9A86A?text=AERO+MOTORS+FLAGSHIP+GALLERY';"
+                alt="Aero Motors Luxury Supercar Gallery" 
+                class="w-full h-full object-cover object-center animate-slow-zoom"
+            />
+            <!-- Crisp Radial & Linear Vignettes -->
+            <div class="absolute inset-0 bg-hero-linear"></div>
+            <div class="absolute inset-0 bg-hero-vignette"></div>
+            <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-obsidian to-transparent"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="max-w-2xl">
+                <!-- Eyebrow Badge -->
+                <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slatecard/80 border border-gold/30 backdrop-blur-md mb-6">
+                    <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
+                    <span class="text-[11px] font-mono font-semibold uppercase tracking-[0.2em] text-gold">Flagship Luxury & Performance Dealership</span>
+                </div>
+
+                <!-- Bold Display Headline -->
+                <h1 class="font-display font-extrabold text-4xl sm:text-6xl lg:text-7xl tracking-tight text-ivory leading-[1.06]">
+                    Drive the <br/>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-ivory via-amber-100 to-gold">Extraordinary.</span>
+                </h1>
+
+                <!-- Concise Editorial Subtitle -->
+                <p class="mt-6 text-base sm:text-lg text-silver leading-relaxed max-w-xl">
+                    A private architectural sanctuary dedicated to bespoke supercars, limited-production track icons, and investment-grade grand tourers—certified to factory perfection.
+                </p>
+
+                <!-- Dual CTA Buttons -->
+                <div class="mt-9 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                    <a href="#inventory" class="inline-flex items-center justify-center gap-2.5 bg-gold hover:bg-goldHover text-obsidian font-display font-bold text-sm uppercase tracking-wider px-8 py-4 rounded-xl shadow-xl shadow-gold/25 transition-all duration-200 hover:-translate-y-0.5">
+                        <span>Explore Inventory</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M19 9l-7 7-7-7"/></svg>
+                    </a>
+                    <button onclick="openTestDriveModal()" class="inline-flex items-center justify-center gap-2.5 bg-slatecard/80 hover:bg-slatecard text-ivory border border-white/15 hover:border-gold/50 backdrop-blur-md font-display font-semibold text-sm uppercase tracking-wider px-8 py-4 rounded-xl transition-all duration-200">
+                        <svg class="w-4 h-4 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                        <span>Book Private Viewing</span>
+                    </button>
+                </div>
+
+                <!-- Key Showroom Metrics -->
+                <div class="mt-12 pt-8 border-t border-white/10 grid grid-cols-3 gap-6 max-w-lg">
+                    <div>
+                        <p class="font-mono font-bold text-xl sm:text-2xl text-gold">150-Point</p>
+                        <p class="text-xs text-silver uppercase tracking-wider mt-1">Master Certified</p>
+                    </div>
+                    <div>
+                        <p class="font-mono font-bold text-xl sm:text-2xl text-ivory">45+</p>
+                        <p class="text-xs text-silver uppercase tracking-wider mt-1">Exotic & Luxury Models</p>
+                    </div>
+                    <div>
+                        <p class="font-mono font-bold text-xl sm:text-2xl text-ivory">24/7</p>
+                        <p class="text-xs text-silver uppercase tracking-wider mt-1">Global Concierge</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 3. ADVANCED MULTI-CRITERIA INVENTORY & SEARCH ==================== -->
+    <section id="inventory" class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-24 pb-24">
+        <!-- Overlapping Glassmorphic Filter & Search Bar -->
+        <div class="bg-charcoal/95 backdrop-blur-2xl border border-borderline rounded-2xl p-5 sm:p-7 shadow-2xl shadow-black/90">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4">
+                <!-- Keyword Search Input -->
+                <div class="lg:col-span-2">
+                    <label for="search-keyword" class="block text-[11px] font-mono uppercase tracking-wider text-silver mb-2">Search Model or Marque</label>
+                    <div class="relative">
+                        <input 
+                            type="text" 
+                            id="search-keyword" 
+                            oninput="applyFilters()" 
+                            placeholder="e.g. GT3, Ferrari, V8, Electric..." 
+                            class="w-full bg-slatecard border border-borderline text-ivory text-sm rounded-xl pl-10 pr-4 py-3 focus:outline-none focus:border-gold transition-colors"
+                        />
+                        <svg class="w-4 h-4 text-silver absolute left-3.5 top-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                    </div>
+                </div>
+
+                <!-- Make Dropdown -->
+                <div>
+                    <label for="filter-make" class="block text-[11px] font-mono uppercase tracking-wider text-silver mb-2">Make / Brand</label>
+                    <select id="filter-make" onchange="applyFilters()" class="w-full bg-slatecard border border-borderline text-ivory text-sm rounded-xl px-3.5 py-3 focus:outline-none focus:border-gold transition-colors">
+                        <option value="all">All Marques</option>
+                        <option value="Porsche">Porsche</option>
+                        <option value="Ferrari">Ferrari</option>
+                        <option value="Mercedes-AMG">Mercedes-AMG</option>
+                        <option value="Audi">Audi</option>
+                        <option value="BMW">BMW</option>
+                        <option value="Aston Martin">Aston Martin</option>
+                        <option value="Lamborghini">Lamborghini</option>
+                        <option value="Range Rover">Range Rover</option>
+                        <option value="McLaren">McLaren</option>
+                    </select>
+                </div>
+
+                <!-- Body Style / Category Dropdown -->
+                <div>
+                    <label for="filter-category" class="block text-[11px] font-mono uppercase tracking-wider text-silver mb-2">Body Style</label>
+                    <select id="filter-category" onchange="applyFilters()" class="w-full bg-slatecard border border-borderline text-ivory text-sm rounded-xl px-3.5 py-3 focus:outline-none focus:border-gold transition-colors">
+                        <option value="all">All Styles</option>
+                        <option value="Coupe">Coupe</option>
+                        <option value="Sedan">Sedan</option>
+                        <option value="SUV">SUV</option>
+                        <option value="Electric">Electric</option>
+                        <option value="Supercar">Supercar</option>
+                    </select>
+                </div>
+
+                <!-- Fuel / Powertrain Dropdown -->
+                <div>
+                    <label for="filter-fuel" class="block text-[11px] font-mono uppercase tracking-wider text-silver mb-2">Powertrain</label>
+                    <select id="filter-fuel" onchange="applyFilters()" class="w-full bg-slatecard border border-borderline text-ivory text-sm rounded-xl px-3.5 py-3 focus:outline-none focus:border-gold transition-colors">
+                        <option value="all">All Powertrains</option>
+                        <option value="Petrol">Petrol</option>
+                        <option value="Hybrid">Hybrid</option>
+                        <option value="Electric">Electric</option>
+                    </select>
+                </div>
+
+                <!-- Price Range Dropdown -->
+                <div>
+                    <label for="filter-price" class="block text-[11px] font-mono uppercase tracking-wider text-silver mb-2">Price Range</label>
+                    <select id="filter-price" onchange="applyFilters()" class="w-full bg-slatecard border border-borderline text-ivory text-sm rounded-xl px-3.5 py-3 focus:outline-none focus:border-gold transition-colors">
+                        <option value="all">Any Price</option>
+                        <option value="under160">Under $160,000</option>
+                        <option value="160to240">$160,000 – $240,000</option>
+                        <option value="over240">$240,000+</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Second Bar: Live Counter, Quick Filters, Sort By & Reset -->
+            <div class="mt-5 pt-5 border-t border-borderline flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div class="flex flex-wrap items-center gap-3">
+                    <p id="results-counter" class="text-sm text-silver">
+                        Showing <span class="font-mono font-bold text-ivory">9</span> of <span class="font-mono font-bold text-ivory">9</span> certified vehicles
+                    </p>
+                    <button id="wishlist-only-btn" onclick="toggleWishlistFilter()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slatecard hover:bg-zinc-800 border border-borderline text-xs font-medium text-silver transition-colors">
+                        <span id="wishlist-filter-dot" class="w-2 h-2 rounded-full bg-zinc-600"></span>
+                        <span>Saved Only</span>
+                    </button>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-3">
+                    <div class="flex items-center gap-2">
+                        <label for="sort-by" class="text-xs font-mono uppercase text-silver">Sort:</label>
+                        <select id="sort-by" onchange="applyFilters()" class="bg-slatecard border border-borderline text-ivory text-xs rounded-xl px-3.5 py-2.5 focus:outline-none focus:border-gold">
+                            <option value="featured">Featured Curation</option>
+                            <option value="price-asc">Price: Low to High</option>
+                            <option value="price-desc">Price: High to Low</option>
+                            <option value="hp-desc">Highest Horsepower</option>
+                        </select>
+                    </div>
+                    <button onclick="resetAllFilters()" class="px-4 py-2.5 rounded-xl bg-slatecard hover:bg-zinc-800 border border-borderline text-xs font-semibold text-ivory hover:text-gold transition-colors">
+                        Reset Filters
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Heading -->
+        <div class="mt-16 mb-10 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+            <div>
+                <span class="font-mono text-xs uppercase tracking-[0.25em] text-gold">Curated Showroom Floor</span>
+                <h2 class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-ivory mt-2">Available Collection</h2>
+            </div>
+            <p class="text-xs font-mono text-silver">Select up to 3 vehicles to compare side-by-side</p>
+        </div>
+
+        <!-- 9-Vehicle Inventory Grid -->
+        <div id="inventory-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Rendered via JavaScript -->
+        </div>
+
+        <!-- Empty Search State -->
+        <div id="empty-inventory" class="hidden text-center py-20 bg-charcoal border border-borderline rounded-2xl">
+            <div class="w-16 h-16 rounded-2xl bg-slatecard border border-borderline flex items-center justify-center mx-auto mb-4 text-gold">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+            </div>
+            <h3 class="font-display font-bold text-xl text-ivory">No Matching Vehicles Found</h3>
+            <p class="text-sm text-silver max-w-md mx-auto mt-2">Try clearing one or more filter criteria, or contact our acquisition desk for off-market collector sourcing.</p>
+            <button onclick="resetAllFilters()" class="mt-6 bg-gold hover:bg-goldHover text-obsidian font-display font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-xl transition-colors">
+                Reset All Filters
+            </button>
+        </div>
+    </section>
+
+    <!-- ==================== 5. INTERACTIVE AUTO FINANCE & LEASE EMI CALCULATOR ==================== -->
+    <section id="finance" class="py-24 bg-charcoal border-y border-borderline relative overflow-hidden">
+        <div class="absolute -top-48 -left-48 w-96 h-96 bg-gold/5 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-2xl mb-12">
+                <span class="font-mono text-xs uppercase tracking-[0.25em] text-gold">Private Wealth & Tailored Terms</span>
+                <h2 class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-ivory mt-2">Finance & Payment Estimator</h2>
+                <p class="text-silver text-sm sm:text-base mt-3 leading-relaxed">
+                    Model bespoke acquisition terms with real-time amortization, trade-in equity integration, and transparent rate breakdowns.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <!-- Left Controls (7 cols) -->
+                <div class="lg:col-span-7 bg-slatecard border border-borderline rounded-2xl p-6 sm:p-8 space-y-6">
+                    <!-- Vehicle Price -->
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <label for="calc-price-input" class="text-xs font-mono uppercase tracking-wider text-silver">Vehicle Price ($)</label>
+                            <div class="relative w-40">
+                                <span class="absolute left-3 top-2 text-silver font-mono text-sm">$</span>
+                                <input type="number" id="calc-price-input" value="238500" min="30000" max="1500000" step="500" oninput="syncFinanceFromInput('price')" class="w-full bg-charcoal border border-borderline rounded-lg pl-7 pr-3 py-1.5 text-right font-mono font-semibold text-sm text-ivory focus:outline-none focus:border-gold" />
+                            </div>
+                        </div>
+                        <input type="range" id="calc-price-slider" min="30000" max="600000" step="1000" value="238500" oninput="syncFinanceFromSlider('price')" class="w-full" />
+                    </div>
+
+                    <!-- Down Payment -->
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <label for="calc-down-input" class="text-xs font-mono uppercase tracking-wider text-silver">Down Payment ($)</label>
+                            <div class="relative w-40">
+                                <span class="absolute left-3 top-2 text-silver font-mono text-sm">$</span>
+                                <input type="number" id="calc-down-input" value="45000" min="0" max="500000" step="500" oninput="syncFinanceFromInput('down')" class="w-full bg-charcoal border border-borderline rounded-lg pl-7 pr-3 py-1.5 text-right font-mono font-semibold text-sm text-ivory focus:outline-none focus:border-gold" />
+                            </div>
+                        </div>
+                        <input type="range" id="calc-down-slider" min="0" max="250000" step="1000" value="45000" oninput="syncFinanceFromSlider('down')" class="w-full" />
+                    </div>
+
+                    <!-- Trade-In Value -->
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <label for="calc-trade-input" class="text-xs font-mono uppercase tracking-wider text-silver">Trade-In Equity ($)</label>
+                            <div class="relative w-40">
+                                <span class="absolute left-3 top-2 text-silver font-mono text-sm">$</span>
+                                <input type="number" id="calc-trade-input" value="0" min="0" max="400000" step="500" oninput="syncFinanceFromInput('trade')" class="w-full bg-charcoal border border-borderline rounded-lg pl-7 pr-3 py-1.5 text-right font-mono font-semibold text-sm text-ivory focus:outline-none focus:border-gold" />
+                            </div>
+                        </div>
+                        <input type="range" id="calc-trade-slider" min="0" max="200000" step="1000" value="0" oninput="syncFinanceFromSlider('trade')" class="w-full" />
+                    </div>
+
+                    <!-- Loan Term & APR Row -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
+                        <!-- Loan Term Buttons -->
+                        <div>
+                            <label class="block text-xs font-mono uppercase tracking-wider text-silver mb-2.5">Loan Term (Months)</label>
+                            <div id="term-buttons" class="grid grid-cols-5 gap-1.5">
+                                <button type="button" onclick="setLoanTerm(24)" data-term="24" class="term-btn py-2.5 rounded-xl font-mono text-xs font-semibold bg-charcoal border border-borderline text-silver hover:text-ivory transition-colors">24m</button>
+                                <button type="button" onclick="setLoanTerm(36)" data-term="36" class="term-btn py-2.5 rounded-xl font-mono text-xs font-semibold bg-charcoal border border-borderline text-silver hover:text-ivory transition-colors">36m</button>
+                                <button type="button" onclick="setLoanTerm(48)" data-term="48" class="term-btn py-2.5 rounded-xl font-mono text-xs font-semibold bg-charcoal border border-borderline text-silver hover:text-ivory transition-colors">48m</button>
+                                <button type="button" onclick="setLoanTerm(60)" data-term="60" class="term-btn py-2.5 rounded-xl font-mono text-xs font-bold bg-gold text-obsidian border border-gold">60m</button>
+                                <button type="button" onclick="setLoanTerm(72)" data-term="72" class="term-btn py-2.5 rounded-xl font-mono text-xs font-semibold bg-charcoal border border-borderline text-silver hover:text-ivory transition-colors">72m</button>
+                            </div>
+                        </div>
+
+                        <!-- Interest Rate APR -->
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <label for="calc-apr-input" class="text-xs font-mono uppercase tracking-wider text-silver">Interest Rate (APR %)</label>
+                                <input type="number" id="calc-apr-input" value="5.49" min="0.5" max="18" step="0.1" oninput="syncFinanceFromInput('apr')" class="w-24 bg-charcoal border border-borderline rounded-lg px-2.5 py-1 text-right font-mono font-semibold text-sm text-ivory focus:outline-none focus:border-gold" />
+                            </div>
+                            <input type="range" id="calc-apr-slider" min="1.9" max="12.0" step="0.1" value="5.49" oninput="syncFinanceFromSlider('apr')" class="w-full mt-2" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Output Breakdown Card (5 cols) -->
+                <div class="lg:col-span-5 bg-gradient-to-b from-slatecard to-obsidian border border-gold/30 rounded-2xl p-6 sm:p-8 shadow-2xl">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-mono uppercase tracking-widest text-gold">Estimated Monthly EMI</span>
+                        <span id="calc-term-badge" class="px-2.5 py-1 rounded-md bg-gold/15 text-gold font-mono text-xs font-semibold">60 Months @ 5.49%</span>
+                    </div>
+
+                    <div class="mt-4 pb-6 border-b border-borderline">
+                        <p id="calc-monthly-output" class="font-mono font-bold text-4xl sm:text-5xl text-ivory tracking-tight">$3,696<span class="text-lg text-silver font-normal">/mo</span></p>
+                        <p class="text-xs text-silver mt-2">Excludes applicable local registration, title, and luxury excise taxes.</p>
+                    </div>
+
+                    <!-- Visual Breakdown Bar -->
+                    <div class="mt-6">
+                        <div class="flex justify-between text-[11px] font-mono text-silver mb-2">
+                            <span>Payment Composition</span>
+                            <span id="calc-total-cost-label">Total: $266,760</span>
+                        </div>
+                        <div class="w-full h-3.5 rounded-full bg-charcoal overflow-hidden flex p-0.5 border border-borderline">
+                            <div id="bar-principal" class="h-full bg-gold transition-all duration-300 rounded-l-full" style="width: 72%;" title="Principal Loan"></div>
+                            <div id="bar-down" class="h-full bg-ivory transition-all duration-300" style="width: 17%;" title="Down Payment & Trade-In"></div>
+                            <div id="bar-interest" class="h-full bg-zinc-500 transition-all duration-300 rounded-r-full" style="width: 11%;" title="Total Interest"></div>
+                        </div>
+                        <div class="grid grid-cols-3 gap-2 mt-3 text-[11px] font-mono">
+                            <div class="flex items-center gap-1.5">
+                                <span class="w-2.5 h-2.5 rounded-full bg-gold shrink-0"></span>
+                                <span class="text-silver">Principal</span>
+                            </div>
+                            <div class="flex items-center gap-1.5">
+                                <span class="w-2.5 h-2.5 rounded-full bg-ivory shrink-0"></span>
+                                <span class="text-silver">Down/Trade</span>
+                            </div>
+                            <div class="flex items-center gap-1.5">
+                                <span class="w-2.5 h-2.5 rounded-full bg-zinc-500 shrink-0"></span>
+                                <span class="text-silver">Interest</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Summary Figures -->
+                    <div class="mt-6 pt-5 border-t border-borderline space-y-2.5 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-silver">Net Financed Principal</span>
+                            <span id="calc-principal-output" class="font-mono font-semibold text-ivory">$193,500</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-silver">Total Down + Trade Equity</span>
+                            <span id="calc-equity-output" class="font-mono font-semibold text-ivory">$45,000</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-silver">Estimated Total Interest</span>
+                            <span id="calc-interest-output" class="font-mono font-semibold text-gold">$28,260</span>
+                        </div>
+                    </div>
+
+                    <!-- Lock In Rate Button -->
+                    <button onclick="lockInFinanceRate()" class="mt-7 w-full bg-gold hover:bg-goldHover text-obsidian font-display font-bold text-xs uppercase tracking-wider py-4 rounded-xl shadow-lg shadow-gold/20 transition-all">
+                        Lock In This Rate & Pre-Qualify
+                    </button>
+                    <p id="rate-lock-toast" class="hidden mt-3 text-center text-xs font-mono text-emerald-400">
+                        ✓ Rate quote saved! Opening concierge pre-qualification...
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 6. TRADE-IN VALUATION & SHOWROOM SERVICES ==================== -->
+    <section id="trade-in" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Trade-In Estimator Card -->
+        <div class="bg-charcoal border border-borderline rounded-3xl p-6 sm:p-10 lg:p-12 shadow-2xl mb-24">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                <div class="lg:col-span-7">
+                    <span class="font-mono text-xs uppercase tracking-[0.25em] text-gold">Instant Portfolio Appraisal</span>
+                    <h2 class="font-display font-bold text-3xl sm:text-4xl text-ivory mt-2">Sell or Trade Your Vehicle</h2>
+                    <p class="text-silver text-sm mt-3 leading-relaxed">
+                        Receive an immediate market-indexed valuation range for your luxury or performance automobile and apply the equity directly to your next acquisition.
+                    </p>
+
+                    <form id="trade-in-form" onsubmit="calculateTradeIn(event)" class="mt-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="ti-make" class="block text-[11px] font-mono uppercase tracking-wider text-silver mb-1.5">Current Make *</label>
+                            <select id="ti-make" required class="w-full bg-slatecard border border-borderline text-ivory text-sm rounded-xl px-4 py-3 focus:outline-none focus:border-gold">
+                                <option value="Porsche">Porsche</option>
+                                <option value="Ferrari">Ferrari</option>
+                                <option value="Mercedes-AMG">Mercedes-AMG</option>
+                                <option value="BMW">BMW</option>
+                                <option value="Audi">Audi</option>
+                                <option value="Aston Martin">Aston Martin</option>
+                                <option value="Lamborghini">Lamborghini</option>
+                                <option value="Range Rover">Range Rover</option>
+                                <option value="Other Luxury">Other Luxury / Exotic</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="ti-model" class="block text-[11px] font-mono uppercase tracking-wider text-silver mb-1.5">Model & Trim *</label>
+                            <input type="text" id="ti-model" required placeholder="e.g. 911 Carrera GTS" class="w-full bg-slatecard border border-borderline text-ivory text-sm rounded-xl px-4 py-3 focus:outline-none focus:border-gold" />
+                        </div>
+                        <div>
+                            <label for="ti-year" class="block text-[11px] font-mono uppercase tracking-wider text-silver mb-1.5">Model Year *</label>
+                            <select id="ti-year" required class="w-full bg-slatecard border border-borderline text-ivory text-sm rounded-xl px-4 py-3 focus:outline-none focus:border-gold">
+                                <option value="2025">2025</option>
+                                <option value="2024" selected>2024</option>
+                                <option value="2023">2023</option>
+                                <option value="2022">2022</option>
+                                <option value="2021">2021</option>
+                                <option value="2020">2020 or Earlier</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="ti-mileage" class="block text-[11px] font-mono uppercase tracking-wider text-silver mb-1.5">Odometer (Miles) *</label>
+                            <input type="number" id="ti-mileage" required min="0" max="150000" value="8500" placeholder="8500" class="w-full bg-slatecard border border-borderline text-ivory text-sm rounded-xl px-4 py-3 font-mono focus:outline-none focus:border-gold" />
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label for="ti-condition" class="block text-[11px] font-mono uppercase tracking-wider text-silver mb-1.5">Overall Condition</label>
+                            <select id="ti-condition" class="w-full bg-slatecard border border-borderline text-ivory text-sm rounded-xl px-4 py-3 focus:outline-none focus:border-gold">
+                                <option value="concours">Concours / Collector Grade (Full PPF, Dealer Serviced)</option>
+                                <option value="excellent" selected>Excellent (Clean Carfax, Minimal Wear)</option>
+                                <option value="good">Good (Minor Cosmetic Wear, Mechanically Sound)</option>
+                            </select>
+                        </div>
+                        <div class="sm:col-span-2 pt-2">
+                            <button type="submit" class="w-full sm:w-auto bg-gold hover:bg-goldHover text-obsidian font-display font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-xl shadow-lg shadow-gold/20 transition-all">
+                                Calculate Instant Valuation
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Right Valuation Result Panel -->
+                <div class="lg:col-span-5 bg-slatecard border border-borderline rounded-2xl p-6 sm:p-8 text-center">
+                    <div class="w-12 h-12 rounded-xl bg-gold/15 border border-gold/30 text-gold flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                    </div>
+                    <span class="text-xs font-mono uppercase tracking-widest text-silver">Estimated Trade-In Range</span>
+                    <p id="ti-range-display" class="font-mono font-bold text-2xl sm:text-3xl text-gold mt-3">$118,500 – $126,000</p>
+                    <p id="ti-vehicle-label" class="text-xs text-silver mt-2">Sample Estimate: 2024 Porsche • 8,500 mi</p>
+
+                    <div class="mt-6 pt-6 border-t border-borderline space-y-3">
+                        <button onclick="applyTradeInToFinance()" class="w-full bg-ivory hover:bg-white text-obsidian font-display font-bold text-xs uppercase tracking-wider py-3.5 px-4 rounded-xl transition-colors">
+                            Apply Equity to Finance Calculator
+                        </button>
+                        <p class="text-[11px] text-silver">Final firm offer confirmed after 30-minute physical inspection.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Showroom Experience & Bespoke Services (4 Cards) -->
+        <div id="services">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <span class="font-mono text-xs uppercase tracking-[0.25em] text-gold">White-Glove Ownership</span>
+                <h2 class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-ivory mt-2">Bespoke Showroom Services</h2>
+                <p class="text-silver text-sm sm:text-base mt-3 leading-relaxed">
+                    Every facet of the Aero Motors ownership journey is engineered for transparency, protection, and effortless enjoyment.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Service 1 -->
+                <div class="bg-charcoal border border-borderline hover:border-gold/50 rounded-2xl p-7 transition-all duration-300 group">
+                    <div class="w-12 h-12 rounded-xl bg-gold/10 border border-gold/25 flex items-center justify-center text-gold mb-5 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    </div>
+                    <h3 class="font-display font-bold text-lg text-ivory mb-2.5">150-Point Master Certification</h3>
+                    <p class="text-silver text-sm leading-relaxed">
+                        Factory ECU telemetry audit, paint-depth micrometer verification, and over-rev diagnostics performed by marque specialists.
+                    </p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-charcoal border border-borderline hover:border-gold/50 rounded-2xl p-7 transition-all duration-300 group">
+                    <div class="w-12 h-12 rounded-xl bg-gold/10 border border-gold/25 flex items-center justify-center text-gold mb-5 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <h3 class="font-display font-bold text-lg text-ivory mb-2.5">Bespoke Tailored Financing</h3>
+                    <p class="text-silver text-sm leading-relaxed">
+                        Custom balloon structures, open-end executive leases, and multi-vehicle portfolio lines via premier private banks.
+                    </p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-charcoal border border-borderline hover:border-gold/50 rounded-2xl p-7 transition-all duration-300 group">
+                    <div class="w-12 h-12 rounded-xl bg-gold/10 border border-gold/25 flex items-center justify-center text-gold mb-5 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <h3 class="font-display font-bold text-lg text-ivory mb-2.5">Enclosed Global Delivery</h3>
+                    <p class="text-silver text-sm leading-relaxed">
+                        Climate-controlled, GPS-tracked air-ride enclosed transport directly from our gallery floor to your residence worldwide.
+                    </p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-charcoal border border-borderline hover:border-gold/50 rounded-2xl p-7 transition-all duration-300 group">
+                    <div class="w-12 h-12 rounded-xl bg-gold/10 border border-gold/25 flex items-center justify-center text-gold mb-5 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    </div>
+                    <h3 class="font-display font-bold text-lg text-ivory mb-2.5">Performance Service Center</h3>
+                    <p class="text-silver text-sm leading-relaxed">
+                        Dedicated motorsport alignment bay, ceramic coating studio, and annual scheduled maintenance with loaner exotic fleet.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 7. TESTIMONIALS, HERITAGE / ABOUT & CONTACT ==================== -->
+    <section id="about" class="py-24 bg-charcoal border-t border-borderline">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Heritage / About Showroom -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pb-24 border-b border-borderline">
+                <div class="lg:col-span-6">
+                    <div class="relative rounded-3xl overflow-hidden border border-borderline shadow-2xl">
+                        <img 
+                            src="https://images.unsplash.com/photo-1562141961-b5d1855d7f30?auto=format&fit=crop&w=1400&q=85" 
+                            onerror="this.onerror=null; this.src='https://placehold.co/900x650/18181E/C9A86A?text=AERO+MOTORS+ARCHITECTURAL+GALLERY';"
+                            alt="Aero Motors Architectural Showroom Interior" 
+                            class="w-full h-[380px] sm:h-[440px] object-cover"
+                        />
+                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6 flex items-center justify-between">
+                            <div>
+                                <p class="font-mono text-xs text-gold uppercase tracking-wider">Est. 2014 • Beverly Hills</p>
+                                <p class="font-display font-bold text-lg text-ivory">42,000 Sq. Ft. Climate-Controlled Pavilion</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6">
+                    <span class="font-mono text-xs uppercase tracking-[0.25em] text-gold">Our Heritage</span>
+                    <h2 class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-ivory mt-2 leading-tight">
+                        Curating Automotive Art Since 2014.
+                    </h2>
+                    <p class="text-silver text-sm sm:text-base mt-5 leading-relaxed">
+                        Founded by former motorsport engineers and private collection advisors, AERO MOTORS reimagines the luxury dealership experience as an intimate architectural gallery. We reject high-volume turnover in favor of provenance-verified icons with documented pedigree.
+                    </p>
+                    <p class="text-silver text-sm sm:text-base mt-4 leading-relaxed">
+                        From private espresso lounges and bespoke configuration suites to trackside telemetry support, every client becomes part of an enduring driving fellowship.
+                    </p>
+
+                    <div class="mt-8 grid grid-cols-3 gap-4 pt-6 border-t border-borderline">
+                        <div>
+                            <p class="font-mono font-bold text-2xl text-gold">$680M+</p>
+                            <p class="text-xs text-silver mt-1">Collector Sales</p>
+                        </div>
+                        <div>
+                            <p class="font-mono font-bold text-2xl text-ivory">98.4%</p>
+                            <p class="text-xs text-silver mt-1">Repeat Clients</p>
+                        </div>
+                        <div>
+                            <p class="font-mono font-bold text-2xl text-ivory">32</p>
+                            <p class="text-xs text-silver mt-1">Countries Delivered</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Verified Collector Testimonials -->
+            <div class="py-20 border-b border-borderline">
+                <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
+                    <div>
+                        <span class="font-mono text-xs uppercase tracking-[0.25em] text-gold">Client Endorsements</span>
+                        <h3 class="font-display font-bold text-3xl text-ivory mt-2">Verified Collector Reviews</h3>
+                    </div>
+                    <div class="flex items-center gap-2 text-gold font-mono text-sm">
+                        <span>★★★★★</span>
+                        <span class="text-silver text-xs">(4.98 / 5.0 across 340+ deliveries)</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Review 1 -->
+                    <div class="bg-slatecard border border-borderline rounded-2xl p-7 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-gold text-sm tracking-widest">★★★★★</span>
+                                <span class="px-2.5 py-1 rounded-md bg-gold/10 border border-gold/25 font-mono text-[10px] text-gold uppercase">2025 Porsche 911 GT3</span>
+                            </div>
+                            <p class="text-sm text-ivory/90 leading-relaxed italic">
+                                "Aero Motors provided complete paint-meter readings, DME over-rev reports, and enclosed delivery to Austin within 72 hours. Truly the gold standard of exotic dealerships."
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-borderline flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-full bg-gold/20 text-gold font-display font-bold text-xs flex items-center justify-center">MR</div>
+                            <div>
+                                <p class="font-display font-semibold text-sm text-ivory">Marcus Reynolds</p>
+                                <p class="text-xs text-silver">Austin, TX • Verified Buyer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div class="bg-slatecard border border-borderline rounded-2xl p-7 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-gold text-sm tracking-widest">★★★★★</span>
+                                <span class="px-2.5 py-1 rounded-md bg-gold/10 border border-gold/25 font-mono text-[10px] text-gold uppercase">2025 Ferrari Roma</span>
+                            </div>
+                            <p class="text-sm text-ivory/90 leading-relaxed italic">
+                                "Their private financing team structured a seamless trade-in of my Aston Martin and delivered a concours-grade Ferrari Roma directly to my residence in Miami."
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-borderline flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-full bg-gold/20 text-gold font-display font-bold text-xs flex items-center justify-center">EL</div>
+                            <div>
+                                <p class="font-display font-semibold text-sm text-ivory">Elena Lindqvist</p>
+                                <p class="text-xs text-silver">Miami, FL • Verified Buyer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div class="bg-slatecard border border-borderline rounded-2xl p-7 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-gold text-sm tracking-widest">★★★★★</span>
+                                <span class="px-2.5 py-1 rounded-md bg-gold/10 border border-gold/25 font-mono text-[10px] text-gold uppercase">2025 Audi RS e-tron GT</span>
+                            </div>
+                            <p class="text-sm text-ivory/90 leading-relaxed italic">
+                                "Zero pressure, deeply knowledgeable specialists, and a private canyon test drive that let me experience the car's dynamics properly before signing."
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-borderline flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-full bg-gold/20 text-gold font-display font-bold text-xs flex items-center justify-center">DK</div>
+                            <div>
+                                <p class="font-display font-semibold text-sm text-ivory">Devon Kapoor</p>
+                                <p class="text-xs text-silver">Los Angeles, CA • Verified Buyer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact & Flagship Location Section -->
+            <div id="contact" class="pt-20">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                    <!-- Left Location & Hours -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <div>
+                            <span class="font-mono text-xs uppercase tracking-[0.25em] text-gold">Visit The Gallery</span>
+                            <h2 class="font-display font-bold text-3xl sm:text-4xl text-ivory mt-2">Flagship Showroom & Concierge</h2>
+                            <p class="text-silver text-sm mt-3 leading-relaxed">
+                                Schedule a private appointment or visit our Beverly Hills pavilion to explore our current inventory in person.
+                            </p>
+                        </div>
+
+                        <div class="bg-slatecard border border-borderline rounded-2xl p-6 space-y-4">
+                            <div>
+                                <p class="text-xs font-mono uppercase text-gold">Showroom Address</p>
+                                <p class="text-sm text-ivory font-medium mt-1">450 North Rodeo Pavilion, Beverly Hills, CA 90210</p>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4 pt-3 border-t border-borderline">
+                                <div>
+                                    <p class="text-xs font-mono uppercase text-gold">Direct Desk</p>
+                                    <p class="text-sm font-mono text-ivory mt-1">+1 (310) 555-0198</p>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-mono uppercase text-gold">Concierge Email</p>
+                                    <p class="text-sm text-ivory mt-1">concierge@aeromotors.com</p>
+                                </div>
+                            </div>
+                            <div class="pt-3 border-t border-borderline">
+                                <p class="text-xs font-mono uppercase text-gold mb-2">Gallery Hours</p>
+                                <ul class="text-xs text-silver space-y-1.5 font-mono">
+                                    <li class="flex justify-between"><span>Mon – Fri:</span><span class="text-ivory">09:30 AM – 07:00 PM</span></li>
+                                    <li class="flex justify-between"><span>Saturday:</span><span class="text-ivory">10:00 AM – 06:00 PM</span></li>
+                                    <li class="flex justify-between"><span>Sunday:</span><span class="text-gold">Private Appointments Only</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Interactive General Inquiry / Private Consultation Form -->
+                    <div class="lg:col-span-7 bg-slatecard border border-borderline rounded-2xl p-6 sm:p-8">
+                        <div id="contact-form-wrapper">
+                            <h3 class="font-display font-bold text-2xl text-ivory">Private Consultation & General Inquiry</h3>
+                            <p class="text-xs text-silver mt-1">A dedicated senior client advisor responds within 2 business hours.</p>
+
+                            <form id="contact-form" onsubmit="submitContactForm(event)" class="mt-6 space-y-4">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label for="ct-name" class="block text-[11px] font-mono uppercase tracking-wider text-silver mb-1.5">Full Name *</label>
+                                        <input type="text" id="ct-name" required placeholder="Victoria Sterling" class="w-full bg-charcoal border border-borderline text-ivory text-sm rounded-xl px-4 py-3 focus:outline-none focus:border-gold" />
+                                    </div>
+                                    <div>
+                                        <label for="ct-email" class="block text-[11px] font-mono uppercase tracking-wider text-silver mb-1.5">Email Address *</label>
+                                        <input type="email" id="ct-email" required placeholder="victoria@sterling.com" class="w-full bg-charcoal border border-borderline text-ivory text-sm rounded-xl px-4 py-3 focus:outline-none focus:border-gold" />
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label for="ct-phone" class="block text-[11px] font-mono uppercase tracking-wider text-silver mb-1.5">Phone Number</label>
+                                        <input type="tel" id="ct-phone" placeholder="+1 (310) 555-0144" class="w-full bg-charcoal border border-borderline text-ivory text-sm rounded-xl px-4 py-3 focus:outline-none focus:border-gold" />
+                                    </div>
+                                    <div>
+                                        <label for="ct-topic" class="block text-[11px] font-mono uppercase tracking-wider text-silver mb-1.5">Inquiry Topic</label>
+                                        <select id="ct-topic" class="w-full bg-charcoal border border-borderline text-ivory text-sm rounded-xl px-4 py-3 focus:outline-none focus:border-gold">
+                                            <option value="Vehicle Acquisition">Vehicle Acquisition & Specs</option>
+                                            <option value="Bespoke Sourcing">Off-Market Collector Sourcing</option>
+                                            <option value="Consignment / Sell">Consign or Sell a Supercar</option>
+                                            <option value="Finance & Leasing">Private Wealth Financing</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label for="ct-message" class="block text-[11px] font-mono uppercase tracking-wider text-silver mb-1.5">Message *</label>
+                                    <textarea id="ct-message" rows="3" required placeholder="Tell us about the vehicle or bespoke service you are interested in..." class="w-full bg-charcoal border border-borderline text-ivory text-sm rounded-xl px-4 py-3 focus:outline-none focus:border-gold"></textarea>
+                                </div>
+
+                                <button type="submit" class="w-full sm:w-auto bg-gold hover:bg-goldHover text-obsidian font-display font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-xl shadow-lg shadow-gold/20 transition-all">
+                                    Send Concierge Inquiry
+                                </button>
+                            </form>
+                        </div>
+
+                        <!-- Instant Confirmation State -->
+                        <div id="contact-confirmation" class="hidden py-10 text-center">
+                            <div class="w-14 h-14 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                            </div>
+                            <h4 class="font-display font-bold text-2xl text-ivory">Concierge Message Received</h4>
+                            <p id="contact-confirm-text" class="text-sm text-silver mt-2 max-w-md mx-auto"></p>
+                            <button onclick="resetContactForm()" class="mt-6 px-6 py-2.5 rounded-xl bg-charcoal border border-borderline text-xs font-mono text-gold hover:border-gold transition-colors">
+                                Send Another Message
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 9. COMPREHENSIVE FOOTER ==================== -->
+    <footer class="bg-obsidian pt-16 pb-10 border-t border-borderline">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-14 border-b border-borderline">
+                <!-- Col 1: Brand Column -->
+                <div>
+                    <a href="#home" class="flex items-center gap-3 mb-5">
+                        <div class="w-9 h-9 rounded-xl bg-gold flex items-center justify-center">
+                            <svg class="w-5 h-5 text-obsidian" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M2 16l7-7 4 3 9-8M15 4h7v7" />
+                            </svg>
+                        </div>
+                        <span class="font-display font-extrabold text-lg tracking-wider text-ivory">AERO<span class="text-gold">.</span>MOTORS</span>
+                    </a>
+                    <p class="text-silver text-sm leading-relaxed mb-6">
+                        Flagship luxury & performance automotive gallery offering 150-point certified supercars, bespoke wealth financing, and enclosed worldwide delivery.
+                    </p>
+                    <p class="font-mono text-xs text-silver">Dealer License #CA-8849201</p>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div>
+                    <h4 class="font-display font-bold text-xs uppercase tracking-[0.2em] text-ivory mb-5">Quick Navigation</h4>
+                    <ul class="space-y-2.5 text-sm text-silver">
+                        <li><a href="#home" class="hover:text-gold transition-colors">Home Gallery</a></li>
+                        <li><a href="#inventory" class="hover:text-gold transition-colors">Curated Inventory</a></li>
+                        <li><a href="#finance" class="hover:text-gold transition-colors">Finance & Lease Calculator</a></li>
+                        <li><a href="#trade-in" class="hover:text-gold transition-colors">Sell / Trade-In Valuation</a></li>
+                        <li><a href="#services" class="hover:text-gold transition-colors">Showroom Services</a></li>
+                        <li><a href="#about" class="hover:text-gold transition-colors">Heritage & Reviews</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Inventory Categories -->
+                <div>
+                    <h4 class="font-display font-bold text-xs uppercase tracking-[0.2em] text-ivory mb-5">Inventory Categories</h4>
+                    <ul class="space-y-2.5 text-sm text-silver">
+                        <li><button onclick="quickCategoryFilter('Supercar')" class="hover:text-gold transition-colors">Exotic Supercars</button></li>
+                        <li><button onclick="quickCategoryFilter('Coupe')" class="hover:text-gold transition-colors">Track & Grand Touring Coupes</button></li>
+                        <li><button onclick="quickCategoryFilter('SUV')" class="hover:text-gold transition-colors">Bespoke Luxury SUVs</button></li>
+                        <li><button onclick="quickCategoryFilter('Electric')" class="hover:text-gold transition-colors">Electric Performance EVs</button></li>
+                        <li><button onclick="openTestDriveModal()" class="hover:text-gold transition-colors">Schedule Private Viewing</button></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Working Newsletter Subscription -->
+                <div>
+                    <h4 class="font-display font-bold text-xs uppercase tracking-[0.2em] text-ivory mb-5">Private Allocation Dispatch</h4>
+                    <p class="text-silver text-sm leading-relaxed mb-4">
+                        Receive priority alerts on off-market arrivals, limited track editions, and private gallery previews.
+                    </p>
+                    <form id="newsletter-form" onsubmit="submitNewsletter(event)" class="space-y-2.5">
+                        <input 
+                            type="email" 
+                            id="newsletter-email" 
+                            required 
+                            placeholder="collector@domain.com" 
+                            class="w-full bg-slatecard border border-borderline text-ivory text-sm rounded-xl px-4 py-3 focus:outline-none focus:border-gold transition-colors"
+                        />
+                        <button type="submit" class="w-full bg-gold hover:bg-goldHover text-obsidian font-display font-bold text-xs uppercase tracking-wider py-3 rounded-xl transition-colors">
+                            Subscribe to Private List
+                        </button>
+                    </form>
+                    <p id="newsletter-msg" class="hidden text-xs font-mono text-emerald-400 mt-2.5">
+                        ✓ Registered for private allocation alerts.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Bottom Legal & Copyright -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-silver">
+                <p>&copy; 2026 AERO MOTORS LLC. All rights reserved.</p>
+                <div class="flex flex-wrap items-center gap-6">
+                    <a href="#contact" class="hover:text-gold transition-colors">Privacy Policy</a>
+                    <a href="#contact" class="hover:text-gold transition-colors">Terms of Sale</a>
+                    <a href="#contact" class="hover:text-gold transition-colors">California Disclosures</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== FLOATING VEHICLE COMPARISON BAR ==================== -->
+    <div id="compare-bar" class="fixed bottom-5 left-1/2 -translate-x-1/2 z-40 hidden w-[94%] max-w-3xl bg-charcoal/95 backdrop-blur-xl border border-gold/40 rounded-2xl p-4 shadow-2xl shadow-black">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3 flex-wrap">
+                <span class="font-mono text-xs uppercase tracking-wider text-gold font-bold">Compare (<span id="compare-count">0</span>/3):</span>
+                <div id="compare-pills" class="flex flex-wrap gap-2"></div>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+                <button onclick="openCompareModal()" class="bg-gold hover:bg-goldHover text-obsidian font-display font-bold text-xs uppercase tracking-wider px-4 py-2.5 rounded-xl transition-colors">
+                    Compare Side-by-Side
+                </button>
+                <button onclick="clearCompare()" class="px-3 py-2.5 rounded-xl bg-slatecard hover:bg-zinc-800 border border-borderline text-xs text-silver hover:text-ivory transition-colors">
+                    Clear
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== 4A. COMPREHENSIVE VEHICLE DETAIL MODAL ==================== -->
+    <div id="vehicle-detail-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/85 backdrop-blur-md overflow-y-auto">
+        <div class="bg-charcoal border border-borderline rounded-3xl max-w-4xl w-full overflow-hidden shadow-2xl my-8">
+            <!-- Top Media Header -->
+            <div class="relative h-64 sm:h-80 bg-slatecard">
+                <img id="detail-img" src="" alt="Vehicle Detail" class="w-full h-full object-cover" />
+                <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/20 to-transparent"></div>
+                <button onclick="closeDetailModal()" aria-label="Close Vehicle Details" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-obsidian/80 hover:bg-gold text-ivory hover:text-obsidian flex items-center justify-center backdrop-blur-md transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+                <div class="absolute bottom-4 left-6 right-6 flex flex-wrap items-end justify-between gap-4">
+                    <div>
+                        <span id="detail-badge" class="px-3 py-1 rounded-full bg-gold text-obsidian font-mono font-bold text-[11px] uppercase tracking-wider"></span>
+                        <h3 id="detail-title" class="font-display font-extrabold text-2xl sm:text-4xl text-ivory mt-2"></h3>
+                    </div>
+                    <div class="text-left sm:text-right">
+                        <p class="font-mono text-xs text-silver">Showroom Price</p>
+                        <p id="detail-price" class="font-mono font-bold text-2xl sm:text-3xl text-gold"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Full Technical Specifications & Actions -->
+            <div class="p-6 sm:p-8">
+                <p id="detail-desc" class="text-sm text-silver leading-relaxed mb-6"></p>
+
+                <!-- 8-Item Technical Spec Matrix -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+                    <div class="bg-slatecard border border-borderline rounded-xl p-3.5">
+                        <p class="text-[10px] font-mono uppercase text-silver">Engine / Motor</p>
+                        <p id="detail-engine" class="font-mono font-semibold text-xs sm:text-sm text-ivory mt-1"></p>
+                    </div>
+                    <div class="bg-slatecard border border-borderline rounded-xl p-3.5">
+                        <p class="text-[10px] font-mono uppercase text-silver">Horsepower</p>
+                        <p id="detail-hp" class="font-mono font-semibold text-xs sm:text-sm text-gold mt-1"></p>
+                    </div>
+                    <div class="bg-slatecard border border-borderline rounded-xl p-3.5">
+                        <p class="text-[10px] font-mono uppercase text-silver">Torque</p>
+                        <p id="detail-torque" class="font-mono font-semibold text-xs sm:text-sm text-ivory mt-1"></p>
+                    </div>
+                    <div class="bg-slatecard border border-borderline rounded-xl p-3.5">
+                        <p class="text-[10px] font-mono uppercase text-silver">0–60 MPH / Top Speed</p>
+                        <p id="detail-perf" class="font-mono font-semibold text-xs sm:text-sm text-ivory mt-1"></p>
+                    </div>
+                    <div class="bg-slatecard border border-borderline rounded-xl p-3.5">
+                        <p class="text-[10px] font-mono uppercase text-silver">Drivetrain</p>
+                        <p id="detail-drivetrain" class="font-mono font-semibold text-xs sm:text-sm text-ivory mt-1"></p>
+                    </div>
+                    <div class="bg-slatecard border border-borderline rounded-xl p-3.5">
+                        <p class="text-[10px] font-mono uppercase text-silver">Transmission</p>
+                        <p id="detail-trans" class="font-mono font-semibold text-xs sm:text-sm text-ivory mt-1"></p>
+                    </div>
+                    <div class="bg-slatecard border border-borderline rounded-xl p-3.5">
+                        <p class="text-[10px] font-mono uppercase text-silver">Exterior / Interior</p>
+                        <p id="detail-finish" class="font-mono font-semibold text-xs text-ivory mt-1"></p>
+                    </div>
+                    <div class="bg-slatecard border border-borderline rounded-xl p-3.5">
+                        <p class="text-[10px] font-mono uppercase text-silver">Mileage / VIN</p>
+                        <p id="detail-vin" class="font-mono font-semibold text-[11px] text-ivory mt-1"></p>
+                    </div>
+                </div>
+
+                <!-- Bespoke Key Features List -->
+                <div class="mb-7">
+                    <h4 class="font-mono text-xs uppercase tracking-wider text-gold mb-3">Factory Options & Key Highlights</h4>
+                    <div id="detail-features" class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-ivory/90"></div>
+                </div>
+
+                <!-- Direct Action Buttons -->
+                <div class="flex flex-col sm:flex-row gap-3 pt-4 border-t border-borderline">
+                    <button id="detail-testdrive-btn" class="flex-1 bg-gold hover:bg-goldHover text-obsidian font-display font-bold text-xs uppercase tracking-wider py-4 px-6 rounded-xl shadow-lg shadow-gold/20 transition-colors">
+                        Schedule Test Drive
+                    </button>
+                    <button id="detail-finance-btn" class="flex-1 bg-slatecard hover:bg-zinc-800 border border-gold/40 text-gold font-display font-bold text-xs uppercase tracking-wider py-4 px-6 rounded-xl transition-colors">
+                        Calculate Payment for This Car
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== 4B. SIDE-BY-SIDE VEHICLE COMPARISON MODAL ==================== -->
+    <div id="compare-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/85 backdrop-blur-md overflow-y-auto">
+        <div class="bg-charcoal border border-borderline rounded-3xl max-w-5xl w-full p-6 sm:p-8 shadow-2xl my-8">
+            <div class="flex items-center justify-between pb-5 border-b border-borderline">
+                <div>
+                    <span class="font-mono text-xs uppercase tracking-widest text-gold">Technical Matrix</span>
+                    <h3 class="font-display font-bold text-2xl text-ivory mt-1">Side-by-Side Vehicle Comparison</h3>
+                </div>
+                <button onclick="closeCompareModal()" aria-label="Close Comparison" class="w-10 h-10 rounded-full bg-slatecard hover:bg-gold text-ivory hover:text-obsidian flex items-center justify-center transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+            <div id="compare-table-container" class="mt-6 overflow-x-auto">
+                <!-- Populated dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== 8A. TEST DRIVE / PRIVATE VIEWING BOOKING MODAL ==================== -->
+    <div id="test-drive-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/85 backdrop-blur-md overflow-y-auto">
+        <div class="bg-charcoal border border-borderline rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative my-8">
+            <button onclick="closeTestDriveModal()" aria-label="Close Booking Modal" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-slatecard hover:bg-gold text-silver hover:text-obsidian flex items-center justify-center transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+
+            <!-- Booking Form View -->
+            <div id="td-form-view">
+                <span class="font-mono text-xs uppercase tracking-widest text-gold">Private Appointment</span>
+                <h3 class="font-display font-bold text-2xl text-ivory mt-1">Book Test Drive or Viewing</h3>
+                <p class="text-xs text-silver mt-1">Reserve a showroom presentation or private residence test drive.</p>
+
+                <form id="td-form" onsubmit="submitTestDriveBooking(event)" novalidate class="mt-6 space-y-4">
+                    <div>
+                        <label for="td-vehicle-select" class="block text-[11px] font-mono uppercase tracking-wider text-silver mb-1.5">Select Vehicle *</label>
+                        <select id="td-vehicle-select" required class="w-full bg-slatecard border border-borderline text-ivory text-sm rounded-xl px-4 py-3 focus:outline-none focus:border-gold">
+                            <!-- Populated dynamically from inventory -->
+                        </select>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="td-date" class="block text-[11px] font-mono uppercase tracking-wider text-silver mb-1.5">Preferred Date *</label>
+                            <input type="date" id="td-date" required class="w-full bg-slatecard border border-borderline text-ivory text-sm rounded-xl px-4 py-3 font-mono focus:outline-none focus:border-gold" />
+                        </div>
+                        <div>
+                            <label for="td-time" class="block text-[11px] font-mono uppercase tracking-wider text-silver mb-1.5">Time Slot *</label>
+                            <select id="td-time" required class="w-full bg-slatecard border border-borderline text-ivory text-sm rounded-xl px-4 py-3 font-mono focus:outline-none focus:border-gold">
+                                <option value="10:00 AM">10:00 AM PST</option>
+                                <option value="12:30 PM">12:30 PM PST</option>
+                                <option value="03:00 PM">03:00 PM PST</option>
+                                <option value="05:30 PM">05:30 PM PST</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-[11px] font-mono uppercase tracking-wider text-silver mb-1.5">Experience Location</label>
+                        <div class="grid grid-cols-2 gap-2.5">
+                            <label class="cursor-pointer">
+                                <input type="radio" name="td-location" value="Beverly Hills Flagship Showroom" checked class="peer sr-only" />
+                                <div class="p-3 rounded-xl bg-slatecard border border-borderline peer-checked:border-gold peer-checked:bg-gold/10 text-center text-xs font-medium text-ivory transition-all">
+                                    Flagship Showroom
+                                </div>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input type="radio" name="td-location" value="Home / Office Concierge Delivery" class="peer sr-only" />
+                                <div class="p-3 rounded-xl bg-slatecard border border-borderline peer-checked:border-gold peer-checked:bg-gold/10 text-center text-xs font-medium text-ivory transition-all">
+                                    Home / Office Delivery
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="td-name" class="block text-[11px] font-mono uppercase tracking-wider text-silver mb-1.5">Full Name *</label>
+                            <input type="text" id="td-name" required placeholder="Alexander Vance" class="w-full bg-slatecard border border-borderline text-ivory text-sm rounded-xl px-4 py-3 focus:outline-none focus:border-gold" />
+                        </div>
+                        <div>
+                            <label for="td-phone" class="block text-[11px] font-mono uppercase tracking-wider text-silver mb-1.5">Phone Number *</label>
+                            <input type="tel" id="td-phone" required placeholder="+1 (310) 555-0122" class="w-full bg-slatecard border border-borderline text-ivory text-sm rounded-xl px-4 py-3 focus:outline-none focus:border-gold" />
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="td-email" class="block text-[11px] font-mono uppercase tracking-wider text-silver mb-1.5">Email Address *</label>
+                        <input type="email" id="td-email" required placeholder="alex@vancecapital.com" class="w-full bg-slatecard border border-borderline text-ivory text-sm rounded-xl px-4 py-3 focus:outline-none focus:border-gold" />
+                    </div>
+
+                    <p id="td-error-msg" class="hidden text-xs font-mono text-rose-400">Please complete all required fields with valid contact information.</p>
+
+                    <button type="submit" class="w-full bg-gold hover:bg-goldHover text-obsidian font-display font-bold text-xs uppercase tracking-wider py-4 rounded-xl shadow-lg shadow-gold/20 transition-all">
+                        Confirm Private Reservation
+                    </button>
+                </form>
+            </div>
+
+            <!-- Booking Confirmation View -->
+            <div id="td-confirm-view" class="hidden text-center py-6">
+                <div class="w-16 h-16 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mx-auto mb-5">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <h3 class="font-display font-bold text-2xl text-ivory">Reservation Confirmed</h3>
+                <p id="td-confirm-details" class="text-sm text-silver mt-3 leading-relaxed"></p>
+                <div class="mt-5 p-3.5 rounded-xl bg-slatecard border border-gold/30 font-mono text-xs text-silver">
+                    Booking Reference: <span id="td-ref-code" class="text-gold font-bold"></span>
+                </div>
+                <button onclick="closeTestDriveModal()" class="mt-6 w-full bg-ivory hover:bg-white text-obsidian font-display font-bold text-xs uppercase tracking-wider py-3.5 rounded-xl transition-colors">
+                    Done
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== 8B. SAVED WISHLIST SLIDE-OVER DRAWER ==================== -->
+    <div id="wishlist-drawer" class="fixed inset-0 z-50 hidden justify-end bg-black/75 backdrop-blur-sm">
+        <div class="w-full max-w-md bg-charcoal border-l border-borderline h-full flex flex-col justify-between p-6 shadow-2xl">
+            <div class="flex items-center justify-between pb-5 border-b border-borderline">
+                <div>
+                    <span class="font-mono text-[11px] uppercase tracking-widest text-gold">Personal Garage</span>
+                    <h3 class="font-display font-bold text-xl text-ivory">Saved Wishlist (<span id="drawer-wishlist-count">0</span>)</h3>
+                </div>
+                <button onclick="closeWishlistDrawer()" aria-label="Close Wishlist" class="w-9 h-9 rounded-full bg-slatecard hover:bg-gold text-ivory hover:text-obsidian flex items-center justify-center transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+
+            <div id="wishlist-items-container" class="flex-1 overflow-y-auto py-5 space-y-4">
+                <!-- Populated dynamically -->
+            </div>
+
+            <div class="pt-4 border-t border-borderline">
+                <button onclick="closeWishlistDrawer(); openTestDriveModal();" class="w-full bg-gold hover:bg-goldHover text-obsidian font-display font-bold text-xs uppercase tracking-wider py-3.5 rounded-xl transition-colors">
+                    Schedule Viewing for Saved Cars
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== SELF-CONTAINED JAVASCRIPT APPLICATION ==================== -->
+    <script>
+        /**
+         * 1. MASTER INVENTORY DATASET (9 Curated Luxury & Performance Vehicles)
+         */
+        const vehicles = [
+            {
+                id: 1,
+                make: "Porsche",
+                model: "2025 911 GT3",
+                category: "Coupe",
+                fuel: "Petrol",
+                badge: "LIMITED",
+                price: 238500,
+                hp: 502,
+                torque: "346 lb-ft",
+                zeroToSixty: "3.2s",
+                topSpeed: "197 mph",
+                engine: "4.0L Naturally Aspirated Flat-6",
+                transmission: "7-Speed PDK",
+                drivetrain: "Rear-Wheel Drive",
+                mileage: "410 mi",
+                exterior: "GT Silver Metallic",
+                interior: "Black Leather / Race-Tex",
+                vin: "WP0AC2A95SS270412",
+                image: "https://images.unsplash.com/photo-1611821064430-0d40291d0f0b?auto=format&fit=crop&w=1200&q=85",
+                description: "Motorsport-derived 9,000 RPM naturally aspirated flat-six with double-wishbone front suspension, swan-neck rear wing, and Porsche Ceramic Composite Brakes (PCCB).",
+                features: ["Porsche Ceramic Composite Brakes", "Front Axle Lift System", "Full Carbon Bucket Seats", "Chrono Package w/ Lap Trigger", "BOSE Surround Sound", "Satin Black Forged Alloy Wheels"]
+            },
+            {
+                id: 2,
+                make: "Ferrari",
+                model: "2025 Roma",
+                category: "Coupe",
+                fuel: "Petrol",
+                badge: "NEW ARRIVAL",
+                price: 268000,
+                hp: 612,
+                torque: "561 lb-ft",
+                zeroToSixty: "3.3s",
+                topSpeed: "199 mph",
+                engine: "3.9L Twin-Turbo V8",
+                transmission: "8-Speed F1 DCT",
+                drivetrain: "Rear-Wheel Drive",
+                mileage: "290 mi",
+                exterior: "Grigio Titanio",
+                interior: "Cuoio Full-Grain Leather",
+                vin: "ZFF98RNA8S0294811",
+                image: "https://images.unsplash.com/photo-1592198084033-aade902d1aae?auto=format&fit=crop&w=1200&q=85",
+                description: "La Nuova Dolce Vita embodied in timeless Maranello proportions, pairing an International Engine of the Year twin-turbo V8 with a 5-position Manettino chassis controller.",
+                features: ["Scuderia Ferrari Shields", "Carbon Fiber Driver Zone + LEDs", "Passenger Display Screen", "Magneride Dual Mode Suspension", "20-Inch Forged Diamond Rims", "Ventilated Full-Electric Seats"]
+            },
+            {
+                id: 3,
+                make: "Mercedes-AMG",
+                model: "2025 G 63",
+                category: "SUV",
+                fuel: "Hybrid",
+                badge: "CERTIFIED",
+                price: 214900,
+                hp: 577,
+                torque: "627 lb-ft",
+                zeroToSixty: "4.2s",
+                topSpeed: "149 mph",
+                engine: "4.0L V8 Biturbo + 48V Mild Hybrid",
+                transmission: "9-Speed AMG SPEEDSHIFT",
+                drivetrain: "AMG Performance 4MATIC AWD",
+                mileage: "620 mi",
+                exterior: "MANUFAKTUR Night Black Magno",
+                interior: "Classic Red / Black Nappa",
+                vin: "W1NYC7HJ9SX481920",
+                image: "https://images.unsplash.com/photo-1520031441872-265e4ff70366?auto=format&fit=crop&w=1200&q=85",
+                description: "Iconic hand-assembled off-road luxury flagship enhanced with AMG ACTIVE RIDE CONTROL hydraulic stabilization and three 100% locking differentials.",
+                features: ["AMG Night Package Magno", "22-Inch Cross-Spoke Forged Wheels", "Burmester 3D Surround Audio", "Active Multicontour Massage Seats", "AMG Carbon Fiber Trim", "Trailer Hitch & Off-Road Cockpit"]
+            },
+            {
+                id: 4,
+                make: "Audi",
+                model: "2025 RS e-tron GT",
+                category: "Electric",
+                fuel: "Electric",
+                badge: "ELECTRIC",
+                price: 147900,
+                hp: 637,
+                torque: "612 lb-ft",
+                zeroToSixty: "3.1s",
+                topSpeed: "155 mph",
+                engine: "800V Dual Synchronous Electric Motors",
+                transmission: "2-Speed Performance Auto",
+                drivetrain: "Electric quattro AWD",
+                mileage: "185 mi",
+                exterior: "Kemora Gray Metallic",
+                interior: "Arras Red Fine Nappa",
+                vin: "WA1AAAFW7S8009314",
+                image: "https://images.unsplash.com/photo-1614200187524-dc4b892acf16?auto=format&fit=crop&w=1200&q=85",
+                description: "Sculpted electric grand tourer engineered with a carbon fiber roof panel, 3-chamber adaptive air suspension, and 270 kW ultra-fast DC charging capability.",
+                features: ["Carbon Matte Roof & Mirror Caps", "All-Wheel Steering", "HD Matrix LED w/ Audi Laser Light", "Bang & Olufsen 3D Sound", "Tungsten Carbide Coated Brakes", "Head-Up Display"]
+            },
+            {
+                id: 5,
+                make: "BMW",
+                model: "2025 M4 Competition",
+                category: "Coupe",
+                fuel: "Petrol",
+                badge: "CERTIFIED",
+                price: 96800,
+                hp: 523,
+                torque: "479 lb-ft",
+                zeroToSixty: "3.4s",
+                topSpeed: "180 mph",
+                engine: "3.0L M TwinPower Turbo Inline-6",
+                transmission: "8-Speed M Steptronic",
+                drivetrain: "M xDrive All-Wheel Drive",
+                mileage: "840 mi",
+                exterior: "Isle of Man Green Metallic",
+                interior: "Kyalami Orange Merino Leather",
+                vin: "WBS43AZ04SCT82910",
+                image: "https://images.unsplash.com/photo-1607853554439-0069ec0f29b6?auto=format&fit=crop&w=1200&q=85",
+                description: "Precision track-bred sports coupe featuring selectable 4WD, 4WD Sport, and pure 2WD drift modes alongside M Compound brakes and curved iDrive 8.5 cockpit.",
+                features: ["M Carbon Exterior Package", "M Driver's Package (180 mph)", "Harman Kardon Surround Audio", "Adaptive M Suspension", "M Shadowline Lights", "Heated Steering & Ventilated Seats"]
+            },
+            {
+                id: 6,
+                make: "Aston Martin",
+                model: "2025 Vantage",
+                category: "Coupe",
+                fuel: "Petrol",
+                badge: "NEW ARRIVAL",
+                price: 204000,
+                hp: 656,
+                torque: "590 lb-ft",
+                zeroToSixty: "3.4s",
+                topSpeed: "202 mph",
+                engine: "4.0L Hand-Built Twin-Turbo V8",
+                transmission: "8-Speed ZF Automatic",
+                drivetrain: "Rear-Wheel Drive w/ E-Diff",
+                mileage: "120 mi",
+                exterior: "Aston Martin Racing Green",
+                interior: "Oxford Tan Bridge of Weir",
+                vin: "SCFSMGAW8SGN09432",
+                image: "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=1200&q=85",
+                description: "Unapologetic British front-mid-engine sports car boasting a 150 HP leap over its predecessor, 50:50 weight distribution, and Bilstein DTX adaptive dampers.",
+                features: ["Bowers & Wilkins 1,170W Audio", "21-Inch Satin Black Forged Wheels", "Smoked Rear LED Tail Lamps", "Bespoke Brogue Detailing", "360-Degree Surround Camera", "Carbon Ceramic Brake Upgrade"]
+            },
+            {
+                id: 7,
+                make: "Lamborghini",
+                model: "2024 Huracán EVO",
+                category: "Supercar",
+                fuel: "Petrol",
+                badge: "LIMITED",
+                price: 289000,
+                hp: 631,
+                torque: "443 lb-ft",
+                zeroToSixty: "2.9s",
+                topSpeed: "202 mph",
+                engine: "5.2L Naturally Aspirated V10",
+                transmission: "7-Speed LDF Dual-Clutch",
+                drivetrain: "All-Wheel Drive w/ Rear Steering",
+                mileage: "510 mi",
+                exterior: "Nero Nemesis Matte",
+                interior: "Nero Ade Alcantara w/ Gold Stitch",
+                vin: "ZHWUF4ZF8RLA23904",
+                image: "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&w=1200&q=85",
+                description: "An iconic naturally aspirated V10 symphony governed by Lamborghini Dinamica Veicolo Integrata (LDVI) predictive chassis logic and forged composite aero.",
+                features: ["Lifting System + Magnetorheological", "Transparent Engine Bonnet", "Sensonum Lamborghini Sound", "20-Inch Aesir Bronze Rims", "Telemetry Recorder System", "Full Exterior Matte PPF"]
+            },
+            {
+                id: 8,
+                make: "Range Rover",
+                model: "2025 Autobiography",
+                category: "SUV",
+                fuel: "Hybrid",
+                badge: "CERTIFIED",
+                price: 174500,
+                hp: 542,
+                torque: "590 lb-ft",
+                zeroToSixty: "4.4s",
+                topSpeed: "155 mph",
+                engine: "3.0L Ingenium + Plug-In Hybrid Electric",
+                transmission: "8-Speed ZF Automatic",
+                drivetrain: "Intelligent All-Wheel Drive",
+                mileage: "390 mi",
+                exterior: "Santorini Black Metallic",
+                interior: "Perlino Semi-Aniline Leather",
+                vin: "SALK19E95SA109482",
+                image: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=1200&q=85",
+                description: "Peerless modernist luxury SUV combining 51 miles of whisper-quiet pure electric range with Executive Class Comfort-Plus rear seating and Meridian Signature audio.",
+                features: ["Meridian Signature 1,600W Sound", "Executive Class Rear Seating", "23-Inch Diamond Turned Wheels", "Electronic Active Differential", "Digital LED Headlights", "SV Bespoke Wood & Leather Wheel"]
+            },
+            {
+                id: 9,
+                make: "McLaren",
+                model: "2024 720S Performance",
+                category: "Supercar",
+                fuel: "Petrol",
+                badge: "LIMITED",
+                price: 294500,
+                hp: 710,
+                torque: "568 lb-ft",
+                zeroToSixty: "2.8s",
+                topSpeed: "212 mph",
+                engine: "4.0L Twin-Turbocharged M840T V8",
+                transmission: "7-Speed SSG Seamless Shift",
+                drivetrain: "Rear-Wheel Drive",
+                mileage: "690 mi",
+                exterior: "Volcano Yellow",
+                interior: "Carbon Black Alcantara",
+                vin: "SBM14DCA5RW007419",
+                image: "https://images.unsplash.com/photo-1621135802920-133df287f89c?auto=format&fit=crop&w=1200&q=85",
+                description: "Built around the ultra-lightweight Monocage II carbon fiber tub with dihedral doors, Proactive Chassis Control II, and blistering 2.8-second sprint capability.",
+                features: ["Carbon Fiber Exterior Upgrade Pack 1", "Electrochromic Glass Roof", "360-Degree Park Assist", "Vehicle Lift System", "Sports Exhaust System", "10-Spoke Super-Lightweight Forged Wheels"]
+            }
+        ];
+
+        // Application State
+        let wishlistIds = JSON.parse(localStorage.getItem('aero_wishlist') || '[]');
+        let compareIds = [];
+        let wishlistFilterOnly = false;
+        let currentLoanTerm = 60;
+        let lastEstimatedTradeInMid = 122250;
+
+        /**
+         * Helper: Currency Formatter
+         */
+        function formatUSD(amount) {
+            return '$' + Math.round(amount).toLocaleString('en-US');
+        }
+
+        /**
+         * 2. INVENTORY RENDERING, FILTERING & SORTING
+         */
+        function renderInventoryGrid(list) {
+            const grid = document.getElementById('inventory-grid');
+            const emptyState = document.getElementById('empty-inventory');
+            const counter = document.getElementById('results-counter');
+
+            counter.innerHTML = `Showing <span class="font-mono font-bold text-ivory">${list.length}</span> of <span class="font-mono font-bold text-ivory">${vehicles.length}</span> certified vehicles`;
+
+            if (list.length === 0) {
+                grid.innerHTML = '';
+                emptyState.classList.remove('hidden');
+                return;
+            }
+
+            emptyState.classList.add('hidden');
+            grid.innerHTML = list.map(car => {
+                const isSaved = wishlistIds.includes(car.id);
+                const isCompared = compareIds.includes(car.id);
+
+                return `
+                <article class="bg-charcoal border border-borderline hover:border-gold/60 rounded-2xl overflow-hidden flex flex-col justify-between group transition-all duration-300 hover:-translate-y-1.5 shadow-xl shadow-black/50">
+                    <div>
+                        <!-- Image Header -->
+                        <div class="relative h-56 sm:h-60 bg-slatecard overflow-hidden">
+                            <img 
+                                src="${car.image}" 
+                                onerror="this.onerror=null; this.src='https://placehold.co/800x520/18181E/C9A86A?text=${encodeURIComponent(car.make + ' ' + car.model)}';"
+                                alt="${car.make} ${car.model}" 
+                                class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                            />
+                            <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-transparent opacity-85"></div>
+
+                            <!-- Status Badge & Wishlist Heart -->
+                            <div class="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between">
+                                <span class="px-3 py-1 rounded-full bg-obsidian/80 backdrop-blur-md border border-gold/35 font-mono text-[10px] font-bold uppercase tracking-wider text-gold">
+                                    ${car.badge}
+                                </span>
+
+                                <button onclick="toggleWishlist(${car.id})" aria-label="Save to Wishlist" class="w-9 h-9 rounded-full bg-obsidian/75 hover:bg-obsidian border border-white/15 flex items-center justify-center backdrop-blur-md transition-transform active:scale-90">
+                                    <svg class="w-4 h-4 ${isSaved ? 'text-rose-500 fill-rose-500' : 'text-ivory'}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <!-- Bottom Category & Compare Checkbox -->
+                            <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between">
+                                <span class="px-2.5 py-1 rounded-lg bg-obsidian/75 backdrop-blur-md border border-white/10 font-mono text-[11px] text-silver">
+                                    ${car.category} • ${car.fuel}
+                                </span>
+
+                                <label class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-obsidian/75 backdrop-blur-md border border-white/10 cursor-pointer hover:border-gold/50 transition-colors">
+                                    <input type="checkbox" ${isCompared ? 'checked' : ''} onchange="toggleCompare(${car.id})" class="accent-amber-500 rounded cursor-pointer" />
+                                    <span class="font-mono text-[11px] text-ivory">Compare</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Vehicle Info & Spec Strip -->
+                        <div class="p-6">
+                            <div class="flex items-start justify-between gap-2">
+                                <div>
+                                    <p class="font-mono text-xs uppercase tracking-widest text-gold">${car.make}</p>
+                                    <h3 class="font-display font-bold text-xl text-ivory mt-0.5 group-hover:text-gold transition-colors">${car.model}</h3>
+                                </div>
+                                <p class="font-mono font-bold text-lg text-ivory">${formatUSD(car.price)}</p>
+                            </div>
+
+                            <!-- 4-Metric Spec Grid -->
+                            <div class="grid grid-cols-4 gap-1.5 mt-5 pt-5 border-t border-borderline text-center">
+                                <div class="bg-slatecard rounded-xl py-2 px-1">
+                                    <p class="text-[9px] font-mono uppercase text-silver">Power</p>
+                                    <p class="font-mono font-bold text-xs text-ivory mt-0.5">${car.hp} HP</p>
+                                </div>
+                                <div class="bg-slatecard rounded-xl py-2 px-1">
+                                    <p class="text-[9px] font-mono uppercase text-silver">0–60</p>
+                                    <p class="font-mono font-bold text-xs text-ivory mt-0.5">${car.zeroToSixty}</p>
+                                </div>
+                                <div class="bg-slatecard rounded-xl py-2 px-1">
+                                    <p class="text-[9px] font-mono uppercase text-silver">Gearbox</p>
+                                    <p class="font-mono font-bold text-[11px] text-ivory mt-0.5 truncate px-1">${car.transmission.split(' ')[0]}</p>
+                                </div>
+                                <div class="bg-slatecard rounded-xl py-2 px-1">
+                                    <p class="text-[9px] font-mono uppercase text-silver">Miles</p>
+                                    <p class="font-mono font-bold text-xs text-ivory mt-0.5">${car.mileage}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Primary Action Button -->
+                    <div class="px-6 pb-6 pt-1">
+                        <button onclick="openDetailModal(${car.id})" class="w-full bg-slatecard hover:bg-gold text-ivory hover:text-obsidian border border-borderline hover:border-gold font-display font-bold text-xs uppercase tracking-wider py-3.5 px-4 rounded-xl transition-all duration-200">
+                            Full Specs & Inquiry
+                        </button>
+                    </div>
+                </article>
+                `;
+            }).join('');
+        }
+
+        function applyFilters() {
+            const keyword = document.getElementById('search-keyword').value.trim().toLowerCase();
+            const make = document.getElementById('filter-make').value;
+            const category = document.getElementById('filter-category').value;
+            const fuel = document.getElementById('filter-fuel').value;
+            const price = document.getElementById('filter-price').value;
+            const sortBy = document.getElementById('sort-by').value;
+
+            let filtered = vehicles.filter(car => {
+                const matchKeyword = !keyword ||
+                    car.make.toLowerCase().includes(keyword) ||
+                    car.model.toLowerCase().includes(keyword) ||
+                    car.engine.toLowerCase().includes(keyword) ||
+                    car.category.toLowerCase().includes(keyword);
+
+                const matchMake = make === 'all' || car.make === make;
+                const matchCategory = category === 'all' || car.category === category;
+                const matchFuel = fuel === 'all' || car.fuel === fuel;
+
+                let matchPrice = true;
+                if (price === 'under160') matchPrice = car.price < 160000;
+                else if (price === '160to240') matchPrice = car.price >= 160000 && car.price <= 240000;
+                else if (price === 'over240') matchPrice = car.price > 240000;
+
+                const matchWishlist = !wishlistFilterOnly || wishlistIds.includes(car.id);
+
+                return matchKeyword && matchMake && matchCategory && matchFuel && matchPrice && matchWishlist;
+            });
+
+            // Sorting
+            if (sortBy === 'price-asc') filtered.sort((a, b) => a.price - b.price);
+            else if (sortBy === 'price-desc') filtered.sort((a, b) => b.price - a.price);
+            else if (sortBy === 'hp-desc') filtered.sort((a, b) => b.hp - a.hp);
+
+            renderInventoryGrid(filtered);
+        }
+
+        function resetAllFilters() {
+            document.getElementById('search-keyword').value = '';
+            document.getElementById('filter-make').value = 'all';
+            document.getElementById('filter-category').value = 'all';
+            document.getElementById('filter-fuel').value = 'all';
+            document.getElementById('filter-price').value = 'all';
+            document.getElementById('sort-by').value = 'featured';
+            wishlistFilterOnly = false;
+            updateWishlistFilterUI();
+            applyFilters();
+        }
+
+        function quickCategoryFilter(cat) {
+            resetAllFilters();
+            document.getElementById('filter-category').value = cat;
+            applyFilters();
+            document.getElementById('inventory').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function toggleWishlistFilter() {
+            wishlistFilterOnly = !wishlistFilterOnly;
+            updateWishlistFilterUI();
+            applyFilters();
+        }
+
+        function updateWishlistFilterUI() {
+            const btn = document.getElementById('wishlist-only-btn');
+            const dot = document.getElementById('wishlist-filter-dot');
+            if (wishlistFilterOnly) {
+                btn.classList.add('border-gold', 'text-gold');
+                dot.classList.remove('bg-zinc-600');
+                dot.classList.add('bg-gold');
+            } else {
+                btn.classList.remove('border-gold', 'text-gold');
+                dot.classList.add('bg-zinc-600');
+                dot.classList.remove('bg-gold');
+            }
+        }
+
+        /**
+         * 3. WISHLIST MANAGEMENT & SLIDE-OVER DRAWER
+         */
+        function toggleWishlist(id) {
+            if (wishlistIds.includes(id)) {
+                wishlistIds = wishlistIds.filter(item => item !== id);
+            } else {
+                wishlistIds.push(id);
+            }
+            localStorage.setItem('aero_wishlist', JSON.stringify(wishlistIds));
+            updateWishlistUI();
+            applyFilters();
+        }
+
+        function updateWishlistUI() {
+            document.getElementById('wishlist-badge').textContent = wishlistIds.length;
+            document.getElementById('drawer-wishlist-count').textContent = wishlistIds.length;
+
+            const container = document.getElementById('wishlist-items-container');
+            const savedCars = vehicles.filter(v => wishlistIds.includes(v.id));
+
+            if (savedCars.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-16">
+                        <p class="font-display font-semibold text-ivory">Your Garage is Empty</p>
+                        <p class="text-xs text-silver mt-2 max-w-xs mx-auto">Tap the heart icon on any vehicle in our collection to save it here for quick comparison and viewing.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = savedCars.map(car => `
+                <div class="bg-slatecard border border-borderline rounded-2xl p-3.5 flex gap-3.5 items-center">
+                    <img src="${car.image}" onerror="this.onerror=null; this.src='https://placehold.co/200x140/18181E/C9A86A?text=AERO';" alt="${car.model}" class="w-24 h-20 object-cover rounded-xl shrink-0" />
+                    <div class="flex-1 min-w-0">
+                        <p class="font-mono text-[10px] uppercase text-gold">${car.make}</p>
+                        <h4 class="font-display font-bold text-sm text-ivory truncate">${car.model}</h4>
+                        <p class="font-mono text-xs font-semibold text-ivory mt-0.5">${formatUSD(car.price)}</p>
+                        <div class="flex items-center gap-3 mt-2">
+                            <button onclick="closeWishlistDrawer(); openDetailModal(${car.id});" class="text-[11px] font-mono text-gold hover:underline">Specs</button>
+                            <button onclick="toggleWishlist(${car.id})" class="text-[11px] font-mono text-silver hover:text-rose-400">Remove</button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function openWishlistDrawer() {
+            updateWishlistUI();
+            const drawer = document.getElementById('wishlist-drawer');
+            drawer.classList.remove('hidden');
+            drawer.classList.add('flex');
+        }
+
+        function closeWishlistDrawer() {
+            const drawer = document.getElementById('wishlist-drawer');
+            drawer.classList.add('hidden');
+            drawer.classList.remove('flex');
+        }
+
+        /**
+         * 4. SIDE-BY-SIDE COMPARISON LOGIC
+         */
+        function toggleCompare(id) {
+            if (compareIds.includes(id)) {
+                compareIds = compareIds.filter(item => item !== id);
+            } else {
+                if (compareIds.length >= 3) {
+                    // Replace oldest selected car if user selects a 4th
+                    compareIds.shift();
+                }
+                compareIds.push(id);
+            }
+            updateCompareBar();
+            applyFilters();
+        }
+
+        function updateCompareBar() {
+            const bar = document.getElementById('compare-bar');
+            const count = document.getElementById('compare-count');
+            const pills = document.getElementById('compare-pills');
+
+            count.textContent = compareIds.length;
+
+            if (compareIds.length === 0) {
+                bar.classList.add('hidden');
+                return;
+            }
+
+            bar.classList.remove('hidden');
+            const selected = vehicles.filter(v => compareIds.includes(v.id));
+            pills.innerHTML = selected.map(car => `
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slatecard border border-borderline text-xs text-ivory">
+                    <span>${car.make} ${car.model.replace(/^\d{4}\s/, '')}</span>
+                    <button onclick="toggleCompare(${car.id})" class="text-silver hover:text-rose-400 font-bold">&times;</button>
+                </span>
+            `).join('');
+        }
+
+        function clearCompare() {
+            compareIds = [];
+            updateCompareBar();
+            applyFilters();
+        }
+
+        function openCompareModal() {
+            const selected = vehicles.filter(v => compareIds.includes(v.id));
+            if (selected.length === 0) return;
+
+            const container = document.getElementById('compare-table-container');
+            const rows = [
+                { label: "Price", key: v => `<span class="font-mono font-bold text-gold">${formatUSD(v.price)}</span>` },
+                { label: "Category / Fuel", key: v => `${v.category} • ${v.fuel}` },
+                { label: "Engine / Powertrain", key: v => v.engine },
+                { label: "Horsepower", key: v => `<span class="font-mono font-bold text-ivory">${v.hp} HP</span>` },
+                { label: "Torque", key: v => v.torque },
+                { label: "0–60 MPH", key: v => `<span class="font-mono text-gold">${v.zeroToSixty}</span>` },
+                { label: "Top Speed", key: v => v.topSpeed },
+                { label: "Transmission", key: v => v.transmission },
+                { label: "Drivetrain", key: v => v.drivetrain },
+                { label: "Odometer", key: v => v.mileage }
+            ];
+
+            container.innerHTML = `
+                <table class="w-full text-left border-collapse min-w-[640px]">
+                    <thead>
+                        <tr class="border-b border-borderline">
+                            <th class="py-4 px-4 font-mono text-xs uppercase text-silver w-44">Specification</th>
+                            ${selected.map(car => `
+                                <th class="py-4 px-4 align-top">
+                                    <img src="${car.image}" onerror="this.onerror=null; this.src='https://placehold.co/400x250/18181E/C9A86A?text=AERO';" class="w-full h-32 object-cover rounded-xl mb-3" />
+                                    <p class="font-mono text-[10px] uppercase text-gold">${car.make}</p>
+                                    <p class="font-display font-bold text-base text-ivory">${car.model}</p>
+                                </th>
+                            `).join('')}
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-borderline text-xs sm:text-sm">
+                        ${rows.map(row => `
+                            <tr class="hover:bg-slatecard/50">
+                                <td class="py-3.5 px-4 font-mono text-xs text-silver">${row.label}</td>
+                                ${selected.map(car => `<td class="py-3.5 px-4 text-ivory">${row.key(car)}</td>`).join('')}
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            `;
+
+            const modal = document.getElementById('compare-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeCompareModal() {
+            const modal = document.getElementById('compare-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        /**
+         * 5. VEHICLE DETAIL MODAL
+         */
+        function openDetailModal(id) {
+            const car = vehicles.find(v => v.id === id);
+            if (!car) return;
+
+            const img = document.getElementById('detail-img');
+            img.src = car.image;
+            img.onerror = function() {
+                this.onerror = null;
+                this.src = `https://placehold.co/1000x550/18181E/C9A86A?text=${encodeURIComponent(car.make + ' ' + car.model)}`;
+            };
+
+            document.getElementById('detail-badge').textContent = `${car.badge} • ${car.category}`;
+            document.getElementById('detail-title').textContent = `${car.make} ${car.model}`;
+            document.getElementById('detail-price').textContent = formatUSD(car.price);
+            document.getElementById('detail-desc').textContent = car.description;
+            document.getElementById('detail-engine').textContent = car.engine;
+            document.getElementById('detail-hp').textContent = `${car.hp} HP`;
+            document.getElementById('detail-torque').textContent = car.torque;
+            document.getElementById('detail-perf').textContent = `${car.zeroToSixty} / ${car.topSpeed}`;
+            document.getElementById('detail-drivetrain').textContent = car.drivetrain;
+            document.getElementById('detail-trans').textContent = car.transmission;
+            document.getElementById('detail-finish').textContent = `${car.exterior} / ${car.interior}`;
+            document.getElementById('detail-vin').textContent = `${car.mileage} • VIN ${car.vin}`;
+
+            document.getElementById('detail-features').innerHTML = car.features.map(f => `
+                <div class="flex items-center gap-2 bg-slatecard/70 px-3 py-2 rounded-lg border border-borderline">
+                    <span class="text-gold font-bold">✓</span>
+                    <span>${f}</span>
+                </div>
+            `).join('');
+
+            document.getElementById('detail-testdrive-btn').onclick = () => {
+                closeDetailModal();
+                openTestDriveModal(car.id);
+            };
+
+            document.getElementById('detail-finance-btn').onclick = () => {
+                closeDetailModal();
+                prefillFinanceCalculator(car.price);
+            };
+
+            const modal = document.getElementById('vehicle-detail-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeDetailModal() {
+            const modal = document.getElementById('vehicle-detail-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        /**
+         * 6. INTERACTIVE AUTO FINANCE & LEASE EMI CALCULATOR
+         */
+        function prefillFinanceCalculator(price) {
+            document.getElementById('calc-price-input').value = price;
+            document.getElementById('calc-price-slider').value = Math.min(price, 600000);
+            const suggestedDown = Math.round(price * 0.2);
+            document.getElementById('calc-down-input').value = suggestedDown;
+            document.getElementById('calc-down-slider').value = Math.min(suggestedDown, 250000);
+            recalculateFinance();
+            document.getElementById('finance').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function syncFinanceFromSlider(field) {
+            const val = document.getElementById(`calc-${field}-slider`).value;
+            document.getElementById(`calc-${field}-input`).value = val;
+            recalculateFinance();
+        }
+
+        function syncFinanceFromInput(field) {
+            const val = document.getElementById(`calc-${field}-input`).value;
+            const slider = document.getElementById(`calc-${field}-slider`);
+            if (slider) slider.value = val;
+            recalculateFinance();
+        }
+
+        function setLoanTerm(months) {
+            currentLoanTerm = months;
+            document.querySelectorAll('.term-btn').forEach(btn => {
+                if (parseInt(btn.dataset.term) === months) {
+                    btn.className = 'term-btn py-2.5 rounded-xl font-mono text-xs font-bold bg-gold text-obsidian border border-gold';
+                } else {
+                    btn.className = 'term-btn py-2.5 rounded-xl font-mono text-xs font-semibold bg-charcoal border border-borderline text-silver hover:text-ivory transition-colors';
+                }
+            });
+            recalculateFinance();
+        }
+
+        function recalculateFinance() {
+            const price = Math.max(0, parseFloat(document.getElementById('calc-price-input').value) || 0);
+            const down = Math.max(0, parseFloat(document.getElementById('calc-down-input').value) || 0);
+            const trade = Math.max(0, parseFloat(document.getElementById('calc-trade-input').value) || 0);
+            const apr = Math.max(0, parseFloat(document.getElementById('calc-apr-input').value) || 0);
+
+            const totalEquity = down + trade;
+            const principal = Math.max(0, price - totalEquity);
+            const monthlyRate = (apr / 100) / 12;
+
+            let monthlyPayment = 0;
+            if (principal > 0) {
+                if (monthlyRate === 0) {
+                    monthlyPayment = principal / currentLoanTerm;
+                } else {
+                    const factor = Math.pow(1 + monthlyRate, currentLoanTerm);
+                    monthlyPayment = (principal * monthlyRate * factor) / (factor - 1);
+                }
+            }
+
+            const totalLoanPayments = monthlyPayment * currentLoanTerm;
+            const totalInterest = Math.max(0, totalLoanPayments - principal);
+            const grandTotalCost = price + totalInterest;
+
+            document.getElementById('calc-term-badge').textContent = `${currentLoanTerm} Months @ ${apr.toFixed(2)}%`;
+            document.getElementById('calc-monthly-output').innerHTML = `${formatUSD(monthlyPayment)}<span class="text-lg text-silver font-normal">/mo</span>`;
+            document.getElementById('calc-principal-output').textContent = formatUSD(principal);
+            document.getElementById('calc-equity-output').textContent = formatUSD(totalEquity);
+            document.getElementById('calc-interest-output').textContent = formatUSD(totalInterest);
+            document.getElementById('calc-total-cost-label').textContent = `Total: ${formatUSD(grandTotalCost)}`;
+
+            // Update visual breakdown bar widths
+            if (grandTotalCost > 0) {
+                const pPct = (principal / grandTotalCost) * 100;
+                const dPct = (Math.min(totalEquity, price) / grandTotalCost) * 100;
+                const iPct = (totalInterest / grandTotalCost) * 100;
+                document.getElementById('bar-principal').style.width = `${pPct}%`;
+                document.getElementById('bar-down').style.width = `${dPct}%`;
+                document.getElementById('bar-interest').style.width = `${iPct}%`;
+            }
+        }
+
+        function lockInFinanceRate() {
+            const toast = document.getElementById('rate-lock-toast');
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+                openTestDriveModal();
+            }, 1100);
+        }
+
+        /**
+         * 7. TRADE-IN VALUATION ESTIMATOR
+         */
+        function calculateTradeIn(event) {
+            event.preventDefault();
+            const make = document.getElementById('ti-make').value;
+            const model = document.getElementById('ti-model').value.trim() || 'Luxury Trim';
+            const year = parseInt(document.getElementById('ti-year').value);
+            const mileage = Math.max(0, parseInt(document.getElementById('ti-mileage').value) || 0);
+            const condition = document.getElementById('ti-condition').value;
+
+            const baseValues = {
+                'Ferrari': 225000,
+                'Lamborghini': 235000,
+                'Porsche': 148000,
+                'Aston Martin': 135000,
+                'Mercedes-AMG': 128000,
+                'Range Rover': 118000,
+                'Audi': 92000,
+                'BMW': 78000,
+                'Other Luxury': 85000
+            };
+
+            let val = baseValues[make] || 90000;
+            const age = Math.max(0, 2026 - year);
+            val = val * Math.pow(0.91, age);
+            val -= mileage * 0.65;
+
+            if (condition === 'concours') val *= 1.07;
+            else if (condition === 'good') val *= 0.91;
+
+            val = Math.max(18000, val);
+            const low = Math.round((val * 0.96) / 500) * 500;
+            const high = Math.round((val * 1.03) / 500) * 500;
+            lastEstimatedTradeInMid = Math.round((low + high) / 2);
+
+            document.getElementById('ti-range-display').textContent = `${formatUSD(low)} – ${formatUSD(high)}`;
+            document.getElementById('ti-vehicle-label').textContent = `Valuation for ${year} ${make} ${model} (${mileage.toLocaleString()} mi)`;
+        }
+
+        function applyTradeInToFinance() {
+            document.getElementById('calc-trade-input').value = lastEstimatedTradeInMid;
+            document.getElementById('calc-trade-slider').value = Math.min(lastEstimatedTradeInMid, 200000);
+            recalculateFinance();
+            document.getElementById('finance').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        /**
+         * 8. TEST DRIVE BOOKING MODAL
+         */
+        function populateBookingVehicleDropdown() {
+            const select = document.getElementById('td-vehicle-select');
+            select.innerHTML = vehicles.map(car =>
+                `<option value="${car.id}">${car.make} ${car.model} (${formatUSD(car.price)})</option>`
+            ).join('');
+        }
+
+        function openTestDriveModal(preselectCarId = null) {
+            const modal = document.getElementById('test-drive-modal');
+            document.getElementById('td-form-view').classList.remove('hidden');
+            document.getElementById('td-confirm-view').classList.add('hidden');
+            document.getElementById('td-error-msg').classList.add('hidden');
+
+            const dateInput = document.getElementById('td-date');
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            const isoTomorrow = tomorrow.toISOString().split('T')[0];
+            dateInput.min = new Date().toISOString().split('T')[0];
+            if (!dateInput.value) dateInput.value = isoTomorrow;
+
+            if (preselectCarId) {
+                document.getElementById('td-vehicle-select').value = preselectCarId;
+            }
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeTestDriveModal() {
+            const modal = document.getElementById('test-drive-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function submitTestDriveBooking(event) {
+            event.preventDefault();
+            const carId = parseInt(document.getElementById('td-vehicle-select').value);
+            const car = vehicles.find(v => v.id === carId) || vehicles[0];
+            const date = document.getElementById('td-date').value;
+            const time = document.getElementById('td-time').value;
+            const location = document.querySelector('input[name="td-location"]:checked').value;
+            const name = document.getElementById('td-name').value.trim();
+            const phone = document.getElementById('td-phone').value.trim();
+            const email = document.getElementById('td-email').value.trim();
+
+            if (!name || !phone || !email.includes('@') || !date) {
+                document.getElementById('td-error-msg').classList.remove('hidden');
+                return;
+            }
+
+            const ref = 'AERO-' + Math.floor(100000 + Math.random() * 900000);
+            document.getElementById('td-ref-code').textContent = ref;
+            document.getElementById('td-confirm-details').innerHTML = `
+                Thank you, <strong class="text-ivory">${name}</strong>. Your private appointment for the <strong class="text-gold">${car.make} ${car.model}</strong> on <strong class="text-ivory">${date} at ${time}</strong> (${location}) is confirmed.
+            `;
+
+            document.getElementById('td-form-view').classList.add('hidden');
+            document.getElementById('td-confirm-view').classList.remove('hidden');
+            document.getElementById('td-form').reset();
+        }
+
+        /**
+         * 9. CONTACT FORM & NEWSLETTER HANDLERS
+         */
+        function submitContactForm(event) {
+            event.preventDefault();
+            const name = document.getElementById('ct-name').value.trim();
+            const topic = document.getElementById('ct-topic').value;
+            document.getElementById('contact-confirm-text').textContent =
+                `Thank you, ${name}. Your inquiry regarding "${topic}" has been assigned to a Senior Client Advisor at our Beverly Hills flagship.`;
+            document.getElementById('contact-form-wrapper').classList.add('hidden');
+            document.getElementById('contact-confirmation').classList.remove('hidden');
+        }
+
+        function resetContactForm() {
+            document.getElementById('contact-form').reset();
+            document.getElementById('contact-confirmation').classList.add('hidden');
+            document.getElementById('contact-form-wrapper').classList.remove('hidden');
+        }
+
+        function submitNewsletter(event) {
+            event.preventDefault();
+            const input = document.getElementById('newsletter-email');
+            const msg = document.getElementById('newsletter-msg');
+            if (input.value.trim()) {
+                msg.classList.remove('hidden');
+                input.value = '';
+                setTimeout(() => msg.classList.add('hidden'), 5000);
+            }
+        }
+
+        /**
+         * 10. MOBILE NAVIGATION & GLOBAL MODAL LISTENERS
+         */
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const openIcon = document.getElementById('menu-icon-open');
+        const closeIcon = document.getElementById('menu-icon-close');
+
+        mobileBtn.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                openIcon.classList.add('hidden');
+                closeIcon.classList.remove('hidden');
+            } else {
+                closeMobileMenu();
+            }
+        });
+
+        function closeMobileMenu() {
+            mobileMenu.classList.add('hidden');
+            openIcon.classList.remove('hidden');
+            closeIcon.classList.add('hidden');
+        }
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeDetailModal();
+                closeCompareModal();
+                closeTestDriveModal();
+                closeWishlistDrawer();
+            }
+        });
+
+        ['vehicle-detail-modal', 'compare-modal', 'test-drive-modal', 'wishlist-drawer'].forEach(modalId => {
+            document.getElementById(modalId).addEventListener('click', (e) => {
+                if (e.target.id === modalId) {
+                    closeDetailModal();
+                    closeCompareModal();
+                    closeTestDriveModal();
+                    closeWishlistDrawer();
+                }
+            });
+        });
+
+        // Initialize Page
+        document.addEventListener('DOMContentLoaded', () => {
+            populateBookingVehicleDropdown();
+            updateWishlistUI();
+            applyFilters();
+            recalculateFinance();
+        });
+    </script>
+</body>
+</html>
